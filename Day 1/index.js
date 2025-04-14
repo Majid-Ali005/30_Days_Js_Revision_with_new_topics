@@ -8,3 +8,5 @@ console.log(2 * 2);
 console.log(2 - 2);
 //division in console.log
 console.log(2 / 2);
+
+window.print("hello world");

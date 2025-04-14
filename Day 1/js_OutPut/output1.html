@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Output Methods</title>
+</head>
+<body>
+
+<h2>Check your browser console and page output</h2>
+<p id="output"></p>
+
+<script>
+  // Output to console
+  console.log("This is console.log()");
+  console.error("This is console.error()");
+  console.warn("This is console.warn()");
+  console.info("This is console.info()");
+
+  // Table output
+  console.table([{name: "Ali", age: 20}, {name: "Sara", age: 22}]);
+
+  // Grouping
+  console.group("Group Example");
+  console.log("Inside the group");
+  console.groupEnd();
+
+  // Alert
+  alert("This is alert()");
+
+  // document.write
+  document.write("This is document.write()<br>");
+
+  // innerHTML
+  document.getElementById("output").innerHTML = "This is innerHTML()";
+
+  // prompt
+  let name = prompt("What is your name?");
+  console.log("User name:", name);
+
+  // confirm
+  let answer = confirm("Do you want to continue?");
+  console.log("User chose:", answer);
+
+  // Print (only works in browser)
+  window.print();
+</script>
+
+</body>
+</html>

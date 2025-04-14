@@ -1,0 +1,1 @@
+console.log("hello this is the external file of javascript");

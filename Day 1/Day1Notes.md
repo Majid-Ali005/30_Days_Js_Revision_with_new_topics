@@ -748,3 +748,27 @@ Ab tumne JavaScript ka basic idea seekh liya. Main suggest karta hoon ke agla to
 
 Aur haan, job ke liye ek tip: Pakistan mein JavaScript developers ke liye bohat scope hai, khaas tor pe startups aur freelancing mein. Apna GitHub profile banake projects dalo—ye bohat impress karta hai. Ab batao, kya seekhna hai agla?
 
+
+## Error 
+- agr aap same name se kisi variable ya phir kisi data ko banatay hy tho aap k pass code line by line chalta hy tho wo aap k first wale statement ko ignore krdeta hy or end me oss ko ossi trha same jo statement milta hy ye phir ossi hi ko execute krdeta hy etc.
+```bash
+let data = {name: "Majid", age:25, name1:"Ali", age:18};
+console.table(data);
+```
+#### output:
+ (index) │ Values  │
+├─────────┼─────────┤
+│ name    │ 'Majid' │
+│ age     │ 18      │
+│ name1   │ 'Ali'   
+- ab agr yaha pr aap dekhe tho aap k pass 25 jo age hy wo print nhi ho rha hy q k aap ne do same name se key ko banaya hy tho js last wale sirf 18 ko print kr rha hy simple.
+#### Solution
+```bash
+let data = {name: "Majid", age:25, name1:"Ali", age1:18};
+console.table(data);
+```
+- tho iss se aap k pass pora ka pora statement print hojayega q k sub k name alag alag hy simple.
+
+
+
+

@@ -490,6 +490,529 @@ JavaScript (JS) syntax refers to the set of rules that define how JavaScript cod
 
 JavaScript is flexible but strict in certain areas (e.g., undeclared variables with `use strict`). If you want a deeper dive into any specific part, let me know!
 
+# JavaScript Comments
+- JavaScript comments can be used to explain JavaScript code, and to make it more readable.
+- JavaScript comments can also be used to prevent execution, when testing alternative code.
+
+### Two Types Of Comments in JavaScript
+1. Single Line Comments
+2. Multi line comments
+3. Inline Comments
+### Single Line Comments
+- Single line comments start with //.
+- Any text between // and the end of the line will be ignored by JavaScript (will not be executed).
+#### Single Line Comments
+```bash
+//1. Single Line Comment
+//variable making with var
+var name = "Majid Ali";
+//to print vairiable in console 
+console.log(name);
+// you can alos make a variable with let and const etc.
+//or ye comment compiler ignore karega matlab iss ko print nhi karega
+
+```
+- aap ko issi hi trha se pehly comment ko use krna hy or phir apna jo b code ho wo likhna hy etc.
+#### This example uses a single line comment at the end of each line to explain the code:
+```bash 
+let x = 5;      // Declare x, give it the value of 5
+let y = x + 2;  // Declare y, give it the value of x + 2
+```
+
+### Multi-line Comments
+- Multi-line comments start with /* and end with */.
+- Any text between /* and */ will be ignored by JavaScript.
+- This example uses a multi-line comment (a comment block) to explain the code:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="myH"></h1>
+<p id="myP"></p>
+
+<script>
+/*
+The code below will change
+the heading with id = "myH"
+and the paragraph with id = "myP"
+*/
+document.getElementById("myH").innerHTML = "JavaScript Comments";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+</script>
+
+</body>
+</html>
+
+```
+- It is most common to use single line comments.
+- log zyda thar single line comments ko use krthy hy.
+
+### Inline comments
+Single-line comments at the end of a code line are referred to as inline comments.
+```bash
+let x = 99;    // assign numerical value to x
+let y = x + 2; // assign the sum of x + 2 to y
+```
+
+### Nested Comments
+aap comment k andar comment ko b likh sakty ho
+```bash
+/*
+This is a multi-line comment
+/*
+This is an attempt to nest a comment, but it will cause an error!
+*/
+console.log("Hello, World!");
+```
+
+### Using Comments to Prevent Execution
+- Using comments to prevent execution of code is suitable for code testing.
+- Adding // in front of a code line changes the code lines from an executable line to a comment.
+- This example uses // to prevent execution of one of the code lines:
+```bash
+//document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+```
+
+## Multi Line Comments
+```bash
+// Multi Line Comments
+/*
+her is
+we are
+create
+a function with 
+multi line comment 
+so see below and enjoy
+*/
+function Myfunction(){
+    console.log("hello multi line comment")
+}
+console.log(Myfunction());
+```
+### Comments
+- bhai dekho comment bohat zaroori hotay hy espccially jub aa kisi k sath kisi project me collaborate kr rhy ho ya phir interview de rhy ho tho oss time pr efficiently comments ka use krna bohat hi important hojata hy.
+- aap ko sirf code nhi likhna hy bal k aap ka code bilkul aik dcoumented hona chaye hy tha k aap ko b baad me samajh aye or jo banda aap k sath kaam kr rha hy ya phir aap k code ko dekh rha hy tho wo b easily samjh jaye etc.
+- Avoid Over-commenting: While comments are beneficial, excessive commenting can clutter the code. Aim for a balance where comments add value without stating the obvious.
+- comments krna aap k code ki calrity ko improve krtha hy magr aisa aap ko nhi krna hy k jaha pr comment ki zaroorat nhi ho or aap waha pr b comments kr rhy ho etc. So avoid the overcommenting. matlab fazool k comments aap ko nhi likhne hy.
+- jub b aap kisi naye cheez ko kr rhy hy tho phir apne code ko aik bar visit kr liya kare oss ko update kiya kare apne hisab se aap jo b changes krthy hy etc.
+- aap ko lambe comments tub likhne chaye hy jub aap koi barha kaam kr rhy or oss ko explain kare with the help of multi line comments. Jaise agr koi function kisi number ko add kr rha hy tho aap pore function ko multi line comment me explain kare k aap k pass kiya kiya ho rha hy or kiya kiya nhi etc.
+- Use Comments Before Code: Place comments above the code you’re explaining to save time for the reader.
+- aap extensions ko b use kr sakty hy apne code ko comment krne k liye vs code me. aap google kr k dekh sakty hy etc.
+- Aksar aap zyda thar tub comments krthy hy jub koi code hard ho samjhne me.
+
+
+##  jsDoc in JavaScript
+![Logo](https://www.aipython.in/wp-content/uploads/2020/02/variable_real_world.png)
+- tho aap ka comment kuch iss trha se highlight hojayega.
+```bash
+/**
+ * This is function takes in user id and shopping cart
+ * loops through items to make invoice send via api
+ * returns json 
+ */
+
+```
+- iss trha k comment ko likhne k liye aap ko simply pehly forward slash / ye likhna hoga or phir do bar star likhna hy tho phir har enter pr aap k pass ye start atay rehenge jub thak aap comments krna chahtay hy tho aap iss ko zaroor use kare q k bohat sare tutorial iss ko nhi batatay hy etc.
+- iss trha k comment k likne se aap ka time zaya nhi hoga.
+- then when I returned to my code the following day I had no idea what I was trying to achieve. I have wasted countless hours using this approach, so remember there is no shame in leaving comments but keep them structured and meaningful.
+- tho aap ko comment krne se darna nhi hy bs comment likhna hy jo b ho.
+
+# javaScript Variables
+![Logo](https://www.aipython.in/wp-content/uploads/2020/02/variable_real_world.png)
+
+## Variables are Containers for Storing Data
+JavaScript Variables can be declared in 4 ways:
+
+- Automatically
+- Using var
+- Using let
+- Using const
+
+### Undeclared Variables - Automatically Variables
+- undeclared variables ya phir automatically vriables me ye hota hy k aap direct variable ko banatay hy aap koi b let ya var ya const ka use nhi krthy hy bs direct apne variable ko banatay hy tho iss trha k variable k banane ko undeclared variables ya phir automatically variables kaha jata hy etc.
+
+```bash
+//here we are making the undeclared variable in javaScript
+
+x = 6;
+y = 7;
+a = "hello world";
+z = x + y;
+console.log(z);
+console.log(typeof(x)); // number
+console.log(typeof(a)); // string
+```
+- NOTE: It is considered good programming practice to always declare variables before use.
+- ye aik achi practice hoti hy programming me k aap pehly variable ko declare kare or phir oss ko use kare.
+From the examples you can guess:
+
+- x stores the value 6
+- y stores the value 7
+- z stores the value 13
+- a store the value hello world
+
+### Example using var
+```bash
+// aap var k keywords se b variable ko bana sakty ho easily.
+var a = 10;
+var b = 10;
+var add = a + b;
+console.log(add);
+```
+### Note
+- The var keyword was used in all JavaScript code from 1995 to 2015.
+- The let and const keywords were added to JavaScript in 2015.
+- The var keyword should only be used in code written for older browsers.
+
+### Example Using Let
+```bash
+let x = 5;
+let y = 6;
+let z = x + y;
+```
+
+### Example using const
+```bash
+const x = 5;
+const y = 6;
+const z = x + y;
+```
+### Mixed Example
+```bash
+const price1 = 5;
+const price2 = 6;
+let total = price1 + price2;
+```
+
+- The two variables price1 and price2 are declared with the const keyword.
+- These are constant values and cannot be changed.
+- The variable total is declared with the let keyword.
+- The value total can be changed.
+
+## When to Use var, let, or const?
+1. Always declare variables
+2. Always use const if the value should not be changed
+3. Always use const if the type should not be changed (Arrays and Objects)
+4. Only use let if you can't use const
+5. Only use var if you MUST support old browsers.
+
+## Note
+Variables are containers for storing values.
+
+# JavaScript Identifiers
+- All JavaScript variables must be identified with unique names.
+- These unique names are called identifiers.
+- Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+- The general rules for constructing names for variables (unique identifiers) are:
+
+1. Names can contain letters, digits, underscores, and dollar signs.
+2. Names must begin with a letter.
+3. Names can also begin with $ and _ (but we will not use it in this tutorial).
+4. Names are case sensitive (y and Y are different variables).
+5. Reserved words (like JavaScript keywords) cannot be used as names.
+
+### Note
+JavaScript identifiers are case-sensitive.
+
+iss case-sensitive ka matlab ye hota hy k aap k pass for example do variable hy myname or dosra hy myName tho ye dono aik dosre se different hy matlab dono alag alag variable hy tho issi hi ko case-sensitive kaha jata hy.
+
+```bash
+//jaise yaha par ye dono variable aik dosre se different hy
+let name = "Majid Ali";
+let Name = "Majid Ali"
+console.log(name);
+console.log(Name);
+```
+### The Assignment Operator
+- ye assignment operator aap k pass aap k value ko aap k variable me store krne ka kaam krtha hy.
+- ye aap k right side k value ko left side k variable me store krtha hy.
+- In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+- ye aap k pass equal se alag hy different hy. javaScript me equal == double se kiya jata hy tho sing = aap k pass assignment operator kehlata hy.
+- NOTE: The "equal to" operator is written like == in JavaScript.
+
+#### NOTE:
+- agr aap number ko string matlab double ya phir single quotation me agr store krthy hy tho phir iss ko as a string hi consider kiya jayega.
+```bash
+//number aap k pass without quotation likha jata hy
+// aap jaise string me agr number ko store krthy hy tho phir oss ko string k thora pr consider kiya jayega.
+// tho aap data type jiss trha use hotay hy oss ka khayal rakhna partha hy etc.
+let number1 = "12";
+let number2 = 12;
+console.log(typeof(number1)); // string
+console.log(typeof(number2)); // number
+```
+
+## Declaring a JavaScript Variable
+- Creating a variable in JavaScript is called "declaring" a variable.
+- You declare a JavaScript variable with the var or the let keyword:
+```bash
+var carName;
+//OR
+let carName
+```
+- After the declaration, the variable has no value (technically it is undefined).
+- To assign a value to the variable, use the equal sign:
+```bash
+carName = "Volvo";
+
+```
+- You can also assign a value to the variable when you declare it: matlab aap direct b variable k andar value ko assign kr sakty hy.
+```bash
+//like this
+let carName = "Volvo";
+
+//or pehly declare krna pr phir value assign krna ye kuch iss trha hota hy
+let cName;
+cName = "Volvo";
+```
+### Note
+It's a good programming practice to declare all variables at the beginning of a script.
+
+## One Statement, Many Variables
+- You can declare many variables in one statement.
+- Start the statement with let and separate the variables by comma:
+```bash
+let person = "John Doe", carName = "Volvo", price = 200;
+```
+
+## Value = undefined
+- In computer programs, variables are often declared without a value. The value can be something that has to be calculated, or something that will be provided later, like user input.
+- A variable declared without a value will have the value undefined.
+- The variable carName will have the value undefined after the execution of this statement:
+```bash
+let carName; //Undefined
+```
+- q k aap ne variable ko declared tho krdiya hy magr oss me koi value assign nhi ki tho iss waja se iss variable ki undefined hogi.
+## Re-Declaring JavaScript Variables
+- If you re-declare a JavaScript variable declared with var, it will not lose its value.
+- The variable carName will still have the value "Volvo" after the execution of these statements:
+```bash
+var carName = "Volvo";
+var carName;
+console.log(carName);
+
+var NewCar = "Parado 1 ";
+var NewCar = "Parado 2";
+console.log(NewCar); // Output: Parado 2
+
+```
+- aik hi name se do variables banana aap k pass sirf var hi provide krtha hy.
+### Note
+You cannot re-declare a variable declared with let or const.
+```bash
+// This will not work: q k aap let se same name k do variables ko nhi bana sakty hy.
+let carName = "Volvo";
+let carName;
+
+```
+
+## JavaScript Dollar Sign $
+- Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:
+- matlab aap javaScript me $ dollar k sign k sath variable ko bana sakty hy.
+```bash
+// koi b error aap ko nhi milega q k aap dollar sign se javaScript me variable bana sakty ho
+let $ = "Hello World";
+let $$$ = 2;
+let $myMoney = 5;
+console.log($);
+console.log($$$);
+console.log($myMoney);
+console.log(typeof($)); // String
+console.log(typeof($$$)); // number
+console.log(typeof($myMoney)); // number
+```
+- Using the dollar sign is not very common in JavaScript, but professional programmers often use it as an alias for the main function in a JavaScript library.
+
+- In the JavaScript library jQuery, for instance, the main function $ is used to select HTML elements. In jQuery $("p"); means "select all p elements".
+
+### JavaScript Underscore (_)
+- Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names:
+- Underscore ko aksar barhe name ko jorhne k liye use kiya jata hy jaise My_Is etc.
+```bash
+let _lastName = "Johnson";
+let _x = 2;
+let _100 = 5;
+```
+- Using the underscore is not very common in JavaScript, but a convention among professional programmers is to use it as an alias for "private (hidden)" variables.
+
+# Medium
+
+![Logo](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*uAScWdray8Vo-6iR49kHfg.png)
+- Javascript is a loosely or dynamically typed language. It means while declaring a variable you don’t have to explicitly mention what type of data you are going to store.
+- loosely or dynamically typed language ka matlab ye hota hy k aap ko variable ko banatay waqt koi b data type ko mention krne ki zaroorat nhi hoti hy bal k ye run hojane pr khud ba khud oss value ko assign krdetay hy apne hisab k type k mutabik dynamically ye kaam hota hy etc.
+jaise aap agr js me koi variable with let a = 25; krthy hy tho aap ne yaha pr koi b type jo hy mentioned nhi kiya howa hy tho js aap k pass loosely or dynamically typed language hy tho ye khud ba khud iss ko type assign krdeta hy etc.
+-  Javascript uses automatic type casting or type conversion to do so. It is smart enough to figure out what you have assigned to it and when you make changes it adapts accordingly. In most of the famous and older languages like java, c++ you have to specify what data type(Numbers, Strings, Float, etc) a variable will contain.
+- A Variable is like a container for storing values like String, Number, Boolean, etc and complex data structure(Arrays, Objects) and even the entire function. Variables are used to store values or result of any operation that we want to use later on. The variable value can be changed later on in the program.
+- javaScipt Engine: jub b aap koi variable ya phir koi or kaam krthy hy tho oss ko process jiss ko store krna kehlata hy wo javaScript ka engine krtha hy.
+-  var a,b; --> aap iss trha se aik time pr do variables ya phir multiple variables b bana sakty hy. like: var a = 10, b = 20,c = 10;
+- Error: console.log(company) // Uncaught ReferenceError: company is not defined --> agr aap k pass koi variable nhi bana howa hy magr aap apne se koi b name console.log() krhty hy tho phir aap ko ye wala error milega etc.
+- If you try to access the variable that doesn’t exist, you will get an error message.
+
+### Var Hoisting:
+Var variables can be accessed before their declaration. Javascript moves all the var variables to the top of the function or global context. This is known as var hoisting.
+![Logo](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*wOW-T-1wBUNEMQqn6ARgmw.png)
+
+# JavaScript Let
+- The let keyword was introduced in ES6 (2015)
+- Variables declared with let have Block Scope
+- Variables declared with let must be Declared before use
+- Variables declared with let cannot be Redeclared in the same scope
+
+## Block Scope
+- Before ES6 (2015), JavaScript did not have Block Scope.
+- JavaScript had Global Scope and Function Scope.
+- ES6 introduced the two new JavaScript keywords: let and const.
+- These two keywords provided Block Scope in JavaScript:
+#### Example
+Variables declared inside a { } block cannot be accessed from outside the block:
+```bash
+{
+  let x = 2;
+}
+// x can NOT be used here
+```
+
+## Global Scope
+- Variables declared with the var always have Global Scope.
+- Variables declared with the var keyword can NOT have block scope:
+#### Example
+Variables declared with varinside a { } block can be accessed from outside the block:
+```bash
+{
+  var x = 2;
+}
+// x CAN be used here
+```
+
+### Cannot be Redeclared
+- Variables defined with let can not be redeclared.
+- You can not accidentally redeclare a variable declared with let.
+- With let you can not do this:
+```bash
+ // you cannot redeclared let variable
+  let x1 = 12;
+  lext x1 = 12; //error: --> SyntaxError: Unexpected identifier 'x1'
+```
+- Variables defined with var can be redeclared.
+```bash
+var x = "John Doe";
+
+var x = 0;
+```
+
+### Redeclaring Variables
+- Redeclaring a variable using the var keyword can impose problems.
+- Redeclaring a variable inside a block will also redeclare the variable outside the block:
+#### Exampel:
+```bash
+var x = 10;
+// Here x is 10
+
+{
+var x = 2;
+// Here x is 2
+}
+
+// Here x is 2
+```
+- Redeclaring a variable using the let keyword can solve this problem.
+- Redeclaring a variable inside a block will not redeclare the variable outside the block:
+```bash
+let x = 10;
+// Here x is 10
+
+{
+let x = 2;
+// Here x is 2
+}
+
+// Here x is 10
+```
+- tho aap k pass let kisi b variable ko Redeclare krne k problem ko solve krdeta hy. Matlab let se jub aap aik varialble ko banatay ho tho phir ossi hi same name se aap koi dosra variable nhi bana sakty ho etc.
+### What is Good?
+- let and const have block scope.
+- let and const can not be redeclared.
+- let and const must be declared before use.
+- let and const does not bind to this.
+- let and const are not hoisted.
+
+### What is Not Good?
+- var does not have to be declared.
+- var is hoisted.
+- var binds to this.
+
+### Redeclaring
+- Redeclaring a JavaScript variable with var is allowed anywhere in a program:
+- Example:
+```bash
+var x = 2;
+// Now x is 2
+
+var x = 3;
+// Now x is 3
+```
+- With let, redeclaring a variable in the same block is NOT allowed:
+- Example:
+```bash
+var x = 2;   // Allowed
+let x = 3;   // Not allowed
+
+{
+let x = 2;   // Allowed
+let x = 3;   // Not allowed
+}
+
+{
+let x = 2;   // Allowed
+var x = 3;   // Not allowed
+}
+```
+- Redeclaring a variable with let, in another block, IS allowed:
+```bash
+let x = 2;   // Allowed
+
+{
+let x = 3;   // Allowed
+}
+
+{
+let x = 4;    // Allowed
+}
+```
+
+### Let Hoisting
+- Variables defined with var are hoisted to the top and can be initialized at any time.
+- Meaning: You can use the variable before it is declared:
+
+#### Var Hoisting
+```bash
+//var hoisting
+
+xh = "var hoisting";
+var xh;
+console.log(xh); //output: -> var hoisting
+```
+- simple hositing ka matlab ye hota hy k jaise mene pehly variable k andar value ko store kiya howa hy phir oss se niche variable ko define kiya howa hy magr var aap k pass hosting ko support krtha hy tho ye khud b khud upar lag jata hy or variable declare hojta hy simple. aap ko koi b error dekhne ko nhi milega.
+- magr agr aap let se krthy hy tho tub aap ko error milega q k aap k pass let jo hy hoisting ko support nhi krtha hy.
+
+- Variables defined with let are also hoisted to the top of the block, but not initialized.
+- Meaning: Using a let variable before it is declared will result in a ReferenceError:
+```bash
+carName = "Saab";
+let carName = "Volvo";
+//error: -> ReferenceError: Cannot access 'carName' before initialization
+```
+
+
+
+
+
+
+
+
+
 
 
 

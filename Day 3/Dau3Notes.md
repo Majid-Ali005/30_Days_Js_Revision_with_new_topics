@@ -610,4 +610,211 @@ console.log(today.toLocaleString()); // outputs something like "3/4/2023, 2:25:3
 console.log(today.toDateString()); // outputs something like "Sat Mar 04 2023"
 ```
 
+# JavaScript Functions
+- A JavaScript function is a block of code designed to perform a particular task.
+- A JavaScript function is executed when "something" invokes it (calls it).
+- javaScript me function aik specific task ko krne k liye banatay hy or aap iss ko multiple bar call kr sakty hy or function calling ko invokes b kaha jata hy.
+- jaise agr aap ko apne program me do number ko plus krne wala program chaye hy tho tub aap aik function me oss ko bana kr rakh sakty hy or phir jub b aap ko zaroorat parhe tho bs sirf oss function ko call krna hy tho aap k pass wo program ajayega tho iss trha k kisi b specific tasks ko krne k liye function ka use kiya jata hy etc.
 
+```bash
+// Function to compute the product of p1 and p2
+function myFunction(p1, p2) {
+    return p1 * p2;
+  }
+// ye 4, 3 ye aap k pass argument kehlatay hy jo k function k parameter me ja kr save hota hy.
+  let result = myFunction(4, 3);
+  console.log(result); // output: 12
+ // aap iss trha se function ko call kr sakty hy.
+```
+- function ko function k keyword se banaya jata hy or phir parenthesis or phir curly brackest se oss ka body banya jata hy etc.
+- or iss me (p1, p2) --> iss me ye p1 or p2 jo hy ye aap k parameter kehlata hy.
+### JavaScript Function Syntax
+- A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+- Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+- The parentheses may include parameter names separated by commas:
+(parameter1, parameter2, ...)
+- The code to be executed, by the function, is placed inside curly brackets: {}
+```bash
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+}
+```
+- Function parameters are listed inside the parentheses () in the function definition.
+- Function arguments are the values received by the function when it is invoked.
+- Inside the function, the arguments (the parameters) behave as local variables.
+
+### Function Invocation
+- The code inside the function will execute when "something" invokes (calls) the function:
+- When an event occurs (when a user clicks a button)
+- When it is invoked (called) from JavaScript code
+- Automatically (self invoked)
+
+### Function Invocation
+- The code inside the function will execute when "something" invokes (calls) the function:
+- When an event occurs (when a user clicks a button)
+- When it is invoked (called) from JavaScript code
+- Automatically (self invoked)
+- aghy hum log iss k bare me b cover karenge k hum log kaise button k onclick pr kaise function ko call kr sakty hy etc.
+
+::::: Example:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+let x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+</body>
+</html>
+
+```
+### Why Functions?
+- With functions you can reuse code
+- You can write code that can be used many times.
+- You can use the same code with different arguments, to produce different results.
+- or ye aap k code ko Dry run hone se bachata hy - Dry means donot repeat yourself.
+
+### The () Operator
+- The () operator invokes (calls) the function:
+- aap iss trha se parenthesis k sath apne function ko call kr sakty hy.
+::::Example
+
+- program: Convert Fahrenheit to Celsius: yaha pr hum log simple sa program fahrenheit se celsius me convert krne ka program bantay hy.
+```bash
+ // fahrenheit to celsius program
+  function toCelsius(f) {
+    return (5/9) * (f-32);
+  }
+  let value = toCelsius(77);
+  console.log(value);
+  // aap iss trha se fahrenheit se celsius me convert krne ka program bana sakty hy easily. with the help of function.
+```
+- Accessing a function with incorrect parameters can return an incorrect answer:
+```bash
+// parameter accessing with wrong parameter
+  function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+  }
+  
+  let value1 = toCelsius();
+  console.log(value1); // output: NaN 
+  // aap k pass output NaN iss wja se a rha hy q k aap function ko call tho kr rhy hy magr aap ne oss me
+  // parameter diya howa hy jiss ko aap function calling k time pr nhi de rhy hy tho oss wja se aap k pass ye NaN erro ata hy
+```
+- Accessing a function without () returns the function and not the function result:
+```bash
+ function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+  }
+  
+  // aap k pass ye output iss wja se a rha hy q k aap function ko without parenthesis call kr rhy hy
+  let value2 = toCelsius;
+  console.log(value2); // output: [Function: toCelsius]
+```
+- Note: -> As you see from the examples above, toCelsius refers to the function object, and toCelsius() refers to the function result.
+
+### Functions Used as Variable Values
+- Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.
+- aap function ko simply variable ki trha b use kr sakty hy. Matlab ye aap k pass variable b aap iss ko consider kr sakty hy.
+- jaise aap variable banatay hy aap ossi trha function ko b use kr sakty hy etc.
+- Instead of using a variable to store the return value of a function:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+<p>Using a function as a variable:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+
+</body>
+</html>
+
+```
+### Local Variables
+- Variables declared within a JavaScript function, become LOCAL to the function.
+- Local variables can only be accessed from within the function.
+```bash
+function myFunction() {
+    let carName = "Volvo";
+    // code here CAN use carName
+  }
+  
+  // code here can NOT use carName
+  console.log(carName);
+  // matlab jiss variable ko aap ne jiss function me banaya hy oss ko aap oss se bahir use nhi kr sakty hy.
+  //Error: ReferenceError: carName is not defined --> kuch iss trha ka error aap ko milega.
+```
+- iss scoping k bare me hum ne already parh rakha hy upar k var,let,const ki kiya scoping hoti hy etc.
+- Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+- Local variables are created when a function starts, and deleted when the function is completed.
+- LOCAL VARIABLE: --> local variable wo hota hy jiss ko aap ossi hi function k andar use kr sakty hy oss se bahir agr aap use krne ki koshish krthy tho phir aap ko ye ReferenceError: carName is not defined wala error milega.
+- GLOBAL VARIABLE: --> ye global variable aap apne program me kahi pr b use kr sakty ho. iss me koi scoping etc nhi hoti hy.
+
+# Medium
+- function aap k pass kuch input ko leta hy or phir oss input pr aap koi program banatay hy or aap ko phir output milta hy etc.
+
+### The Complete Guid To JavaScript Function
+- Functions can be flexible, reusable, and modular but if you don’t know their key features, you might miss out on using functions at their fullest potential.
+### What is a function?
+- In simple words, functions are actions or processes that receive an input and return an output. They can perform various tasks and calculations.
+- For example, if I want to calculate something when the user clicks the button, I will write a function for that action.
+- If I want to close the image modal, I will write a function.
+- If I want to remove something from a shopping cart, I will write a function to achieve that.
+- I can even write one function that can run another function. I can control functions with other functions.
+### How to define a function?
+To start using functions, you need to define (create) them. You can define functions in various ways.
+##### Common ways to define a function:
+- Function declaration
+- Function expression
+- IIFE (Immediately invoked function expression)
+- Arrow function expression
+- Function constructor
+- Generator function
+- Methods
+
+We are going to go through each of these topics in more detail and expand on a lot of interesting features of JavaScript functions.
+
+#### Function declaration
+One of the ways to define a function is a function declaration. When you create a function with a name, it’s called a function declaration (aka function definition or function statement). This is the most standard, basic way of writing a function and what you will use very often as a beginner.
+
+Here is an illustration of a function declaration:
+```bash
+// function declaration
+function myFunction(msg) {
+    console.log(msg);
+}
+let functioCalling = myFunction("this is simple msg"); // output: this is simple msg
+// tho aap ko function ko directly call kr sakty without console.log() q k js me function direct pehly call hotay hy
+console.log(functioCalling); // output: undefined
+```
+- The function declaration above consists of:
+
+- A function keyword
+- The name of this function
+- A parenthesis that holds the parameter(s)
+- The body of the function, enclosed in curly braces with statements that define the function
+![alt text](image.png)

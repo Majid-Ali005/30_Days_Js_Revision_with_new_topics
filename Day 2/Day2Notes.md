@@ -1004,6 +1004,148 @@ carName = "Saab";
 let carName = "Volvo";
 //error: -> ReferenceError: Cannot access 'carName' before initialization
 ```
+### JavaScript Const
+- The const keyword was introduced in ES6 (2015)
+- Variables defined with const cannot be Redeclared
+- Variables defined with const cannot be Reassigned
+- Variables defined with const have Block Scope
+- matlab jub aap const se variable ko banatay hy tho oss ka scope hota hy jaise hamare pass var or let me hota hy etc.
+- aap let or var k variable me value ko reassigned kr sakty hy magr const me nhi kr sakty hy
+```bash
+//let reassigned the value
+let p = 12;
+p = 13;
+console.log(p); // output: 13
+```
+- jaise yaha pr aap dekh sakty hy k hum ne let k variable me value ko reassgined krdiya hy. tho ye let me possible hy magr const me nhi hy.
+
+### Cannot be Reassigned
+- A variable defined with the const keyword cannot be reassigned:
+```bash
+const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error
+//Error: TypeError: Assignment to constant variable.
+```
+### Must be Assigned
+- JavaScript const variables must be assigned a value when they are declared:
+- Matlab aap const me value ko declared krthy time value ko assign tho kr sakty hy magr reassigned nhi kr sakty hy.
+```bash
+//ye aap k pass correct way hy below
+//Correct
+const PI = 3.14159265359;
+```
+```bash
+// ye aap k pass correct way nhi hy q k aap const me value ko reassign nhi kr sakty hy.
+// Incorrect
+const PI;
+PI = 3.14159265359;
+```
+### When to use JavaScript const?
+- Always declare a variable with const when you know that the value should not be changed.
+- aap tub hi const ko use kare jub aap chahtay hy k bhai mujhe iss variable k andar data ko change nhi krna hy. Matlab koi b banda iss k andar value ko change na kr saky tho tub hum log const ka use krthy hy.
+
+Use const when you declare:
+
+- A new Array
+- A new Object
+- A new Function
+- A new RegExp
+- aksar array,object,function,RegExpression etc ko jub aap banatay hy tho tub aap aksar const ka use krthy hy jo k aik achi practice hoti hy etc.
+
+Constant Objects and Arrays
+- The keyword const is a little misleading.
+- It does not define a constant value. It defines a constant reference to a value.
+- reference to a value: --> iss ka matlab ye hy k aap ka jo variable hota hy const keyword sirf oss ko const banta hy or phir refrence deta hy value ko k aap iss ko change nhi kr sakty hy q k mujhe as a const define kiya gaya hy etc.
+
+Because of this you can NOT:
+
+- Reassign a constant value
+- Reassign a constant array
+- Reassign a constant object
+
+But you CAN:
+
+- Change the elements of constant array
+- Change the properties of constant object
+
+### Constant Arrays
+- You can change the elements of a constant array:
+- Matlab aap array k elements ko change kr sakty hy magr array ko pora assign nhi kr sakty hy jub aap const ki madad se array ko banatay hy etc.
+- Example:
+```bash
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
+
+// OR 
+const array1 = ["a",12,"b","c",true,"hello"];
+array1[0] = "c"; // no problem change hojayega array ka element
+console.log(array1); // [ 'c', 12, 'b', 'c', true, 'hello' ]
+```
+- But you can NOT reassign the array:
+```bash
+const cars = ["Saab", "Volvo", "BMW"];
+
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+//Error: cars = ["Toyota", "Volvo", "Audi"]; 
+     ^
+//TypeError: Assignment to constant variable.
+```
+
+### Constant Objects
+- You can change the properties of a constant object:
+- objects ko bantay waqt aap phir iss me iss k perperties ko change kr sakty hy no problem.
+```bash
+// You can create a const object:
+const car = {
+    type: "Fiat",
+    model: "500",
+    color: "white"
+};
+
+// You can change a property:
+car.color = "red";
+
+// You can add a property:
+/**
+ * bhai ye owner ka key and value aap k pass available hi nhi tha aap k object me tho aap issi trha se apne key or object ko direct bahir se b add kr sakty ho
+ * 
+ */
+car.owner = "Johnson";
+// print object with console.log()
+console.log(car);
+```
+- But you can NOT reassign the object:
+- matlab aap object k properties ko tho change or update kr sakty hy jiss ko hum ne upar dekh liye hy magr aap pore object ko reassign nhi kr sakty hy. 
+```bash
+const car = {type:"Fiat", model:"500", color:"white"};
+
+car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+```
+
+### Different Between Let,Var,Const
+![Logo](https://miro.medium.com/v2/resize:fit:1400/0*tkspzKBpgWrQo97J.jpg)
+
+### Hoisting
+- Variables defined with var are hoisted to the top and can be initialized at any time.
+- var aap k pass Hoisting hota hy magr const nhi hota hy.
+- Variables defined with const are also hoisted to the top, but not initialized.
+- Meaning: Using a const variable before it is declared will result in a ReferenceError:
+- matlab ye top me tho chala jata hy hoisting kr k magr initialized nhi hota hy.
+```bash
+alert (carName);
+const carName = "Volvo";
+// Error: --> ReferenceError: alert is not defined
+```
+
+
 
 
 

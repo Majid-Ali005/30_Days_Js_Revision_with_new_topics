@@ -19,5 +19,10 @@ console.log(z);
 //   lext x1 = 12; //error: --> SyntaxError: Unexpected identifier 'x1'
 
 // var hoisiing
-carName = "Saab";
-let carName = "Volvo";
+// carName = "Saab";
+// let carName = "Volvo";
+
+//let reassigned the value
+let p = 12;
+p = 13;
+console.log(p);

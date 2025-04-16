@@ -818,3 +818,433 @@ console.log(functioCalling); // output: undefined
 - A parenthesis that holds the parameter(s)
 - The body of the function, enclosed in curly braces with statements that define the function
 ![alt text](image.png)
+
+- Function keyword: To create and use functions you always need to use the keyword function as it’s a part of JavaScript syntax that helps JavaScript to identify what you are trying to create.
+- Function name: A function name is a way to identify the function. When you have various functions you need to differentiate which one does what for later use.
+- Function parameter: It’s the name of a potential value that we can pass to the function. Imagine, you have a function that console logs a name every time you click a button. I can pass inside the function the parameter that will have a value later. This function will receive this value and then log it to the console. Function parameters are not mandatory.
+- Function body: This refers to the block of code inside curly braces ({}). This is a place where we can provide function instructions.
+- Function statement: Inside the body, we can have function statements and expressions that are the tasks or processes we expect the function to perform.
+
+### How to call a function?
+Once you create a function you also need to call it. When you call the function, it performs the tasks you write in the function body. There are functions that don’t need to be called.
+
+Functions can be also called differently but it’s a special function that we will cover later.
+
+The basic that you need to understand right now is that to call a function you use its name followed by parenthesis. Just like with people. To call someone you use their name, so in the case of functions, it’s the same.
+
+As an illustration, here is a function hello:
+![alt text](image-1.png)
+
+This function is not going to show us anything in the console right now because we didn’t call it.
+
+That’s why we need to add one more line:
+![alt text](image-2.png)
+- tho aap iss trha se direct b apne function ko call kr sakty hy without using any consoe ya phir variable.
+```bash
+// Function Calling
+function HelloFunction(Hello){
+    console.log(Hello);
+    console.log("Hello World without parameter");
+}
+HelloFunction("hello world");
+// output: hello world
+// Hello World without parameter
+```
+
+### What is a function parameter?
+A function parameter is a name that we include when creating a function. This name will potentially be a value that the function receives and later performs some operations on/with it.
+
+The name that you come up with can be any, it’s up to you what the name will be and doesn’t affect the result. The parameter names are needed to associate them with future values we plan to pass to the function.
+
+#### There are several rules to remember when it comes to parameters:
+- The names cannot be repetitive. If you use one name, the next one needs to be different.
+- You don’t always have to use parameters. They are not required.
+- The order matters. If you want to pass parameters of a name and surname, the values you plan to pass, need to match the order. If your second parameter is called last name but you pass a name as a second value, the value of the last name parameter will be the name value.
+- You don’t define the data type of the possible value. JavaScript is a dynamically typed language meaning that you don’t have to write in advance what data type the parameter is going to be.
+- Parameter names need to be descriptive and it’s recommended to use camelCase (lastName, firstName) but not a must.
+
+The must-know along with parameters are arguments.
+
+### What is a function argument?
+A function argument is a value that we pass to the function. The value will be represented by the function parameter. When I use parameters like name and last name, the values that I will pass, will be called arguments.
+
+Here is some visualization:
+![alt text](image-3.png)
+According to the image above, the name msg is the parameter but the actual value, “Hello! :)” is an argument.
+
+### Arguments object
+- An argument object is a built-in object available inside the body of the function. It represents all the arguments that we passed into the function. This object is more similar to an array but it’s not a regular array we know of.
+- If you have 4 parameters in the function, for example, but you pass 5 arguments (values), the arguments object will read all the arguments you have passed, even if there is no parameter to read it.
+- You can use an argument object and combine it with array index functionality.
+- An index is the location in the array. The index of the very first item in an array is 0, so its position (index) is 0. The next one is at the index 1 and so on.
+
+Here is an example:
+![alt text](image-4.png)
+- iss image me agr aap dekhe tho aap k pass parameter aik hy magr aap argument jo hy do 2 pass kr rhy hy because of the indexing jo k array me hoti hy etc.
+- but best cheez ye hy k aap rest parameter ko use kare q k ye iss trha se array indexing se aap k pass kuch functionality me gharh barh ho sakti hy etc.
+- In this function, I used only one parameter but passed two arguments. With the help of the arguments object I targeted the argument at position 0, then at position 1 (the second one). Finally, I targeted the argument with the parameter name.
+- The arguments object can be a powerful tool but considering that it lacks some functionalities, in the modern world you can simply replace the arguments object with the rest parameter.
+
+### The rest parameter
+Instead of using the arguments object, we can also use a rest parameter which treats one parameter as an array of several arguments.
+
+For example, if I wrote one parameter name but passed several arguments, I can actually retrieve all these arguments by “spreading” my parameter. To “spread” the parameter name, you can use the three dots (…) before the parameter name. The name can be anything you wish as it is something created by you, all the other previous rules don’t change.
+
+Here is an example based on the previous function:
+```bash
+![alt text](image-5.png)
+```
+
+In this function, instead of writing one parameter name, I added three dots. These three dots will retrieve all the existing arguments and combine them into an array.
+
+Here is another example if I pass one argument:
+![alt text](image-6.png)
+The result remains similar.
+
+Let’s see what happens if I don’t pass any arguments:
+![alt text](image-7.png)
+
+It will return an empty array because there is nothing to save in the array. As a result, this is a better way to access all arguments compared to the arguments object as we can manipulate it as a regular array.
+
+### Default parameter value
+Sometimes there can be a situation when your function has two parameters but doesn’t always receive two arguments.
+
+First, let’s remember what happens when we pass both:
+![alt text](image-8.png)
+
+Next, let’s see what happens if we don’t:
+
+![alt text](image-9.png)
+
+Instead of the last name, we see undefined because the parameter wasn’t given any value.
+
+When you have a real website and users, it might be not very good if the user of your website saw something like this, right?
+
+How to solve this? We use a default value!
+
+As the name suggests, the default value is a value we can assign to the parameter that will be a default. If we don’t pass anything the starting value will be this default value.
+
+What value can we give? Any value you like!
+
+In this case, we can add a default value “Anonymous” which will be used in case we don’t have a last name:
+
+![alt text](image-10.png)
+If the function doesn’t receive the last name value, the default value Anonymous will be used.
+
+On the other hand, there are other ways around this.
+
+You can check if the last name is undefined and show different results conditionally but I think the default value is more convenient.
+
+A default value can be any parameter at any position and even several of them.
+![alt text](image-11.png)
+
+### Return statement in functions
+In a function body, we often use a return statement. A return statement returns one specific value and stops the function execution. Any code you have after the return statement is not going to execute. That’s why the return statement should always be the last one.
+
+The value returned can be any data type. It’s also not mandatory to write a value after the return statement. If you skip the value, the function will return undefined.
+![alt text](image-12.png)
+The value you want to return always needs to start from the same line where the return statement is located. If done otherwise, this line break will be automatically considered as a semicolon. JavaScript automatically inserts a semicolon after the return statement even if you don’t do it yourself and this new line will be closed.
+![alt text](image-13.png)
+To avoid this issue but use a new line anyway you can simply wrap a parenthesis around the value you want to return:
+![alt text](image-14.png)
+Now it should be working properly again.
+
+#### What does the return statement do:
+- In regular functions, the return says “ I am done, here is the answer”, stops doing anything and gives you the value you asked for from the place where you called the function.
+
+Before we continue further, let’s remember the function declaration structure one more time and move to a function expression:
+
+![alt text](image-15.png)
+
+### Function expression
+Another way to define a function is a function expression.
+
+#### In function expressions, you have two options:
+
+- You can create a function expression without a name (aka anonymous function) or
+- You can create a named function expression
+
+The main difference is that in function expressions you can have an additional perk of not naming the function. In a function declaration, you always name the function.
+- matlab aap function jub expression se banatay hy tho phir aap ko function ka name rakhne ki zaroorat nhi hoti hy. magr without expression aap functiono ko declare krthy time function ka name rakthy thy simple.
+
+##### Anonymous functions (unnamed function expression) vs. named function expressions
+As the name suggests, the anonymous function is a function that doesn’t have a name, here is an example:
+![alt text](image-16.png)
+I am mapping through the array of fruit and I use a function without a name. This function is a function (specifically a callback function) that runs for every element in the array.
+
+At the same time, you can optionally use a name for this function. BUT in this case, it will be a named function expression, not an anonymous function. As anonymous means that it doesn’t have a name, it’s anonymous.
+- or issi ko call back function b kaha jata hy q k ye bar bar ja kr aap k array me se element ko print kr rha hota hy jaise aap b iss image k example me dekh sakty ho.
+
+Let’s try this out:
+![alt text](image-17.png)
+As you see, the result is the same. In this situation, we would not need to use any name because this function runs only once and we don’t use it outside of the code block.
+
+We can take the function declaration we created earlier and transform it into an anonymous function:
+![alt text](image-18.png)
+In this example, I created the exact same function however it does not have a name anymore. I omitted the name which was supposed to be written after the function keyword but there is nothing right now.
+
+However, a function written in such a way is going to throw an error:
+
+🚨 Function statements require a function name
+
+This code will be treated as a function statement and that’s why it requires a name.
+
+#### Function expression vs. function statement
+- A function statement and a function expression are slightly different things in JavaScript.
+- A function expression means that we are able to create functions in the middle of expressions, so that’s why it’s called a function expression.
+
+What exactly is a function expression?
+
+- Expression in JavaScipt is a block of code where you ask a question in a way that gives you a specific value.
+- Let’s say you make a calculation and you want to check how much is 1 plus 1. The value given back will be a summary of 1 and 1. And this 1 plus 1 is an expression. Expressions usually produce specific values. While statements, that are very similar produce specific actions. For example, declaring a variable, or doing something with an if statement. So you are making a kind of statement.
+- In JavaScript, you can use expressions when a statement is expected but you cannot use a statement when an expression is expected.
+
+To avoid this error and make a function expression usable, we need to:
+
+Save a function expression in a variable
+Or use a function as an IIFE (Immediately Invoked Function Expression)
+
+##### Recursion:
+ recursion, which we will cover in more detail very soon is a technique when a function can call itself. It executes code and then calls itself again which can be stopped if it meets specific conditions. And to make a function call itself it needs to have a name, an identifier.
+
+ ### What makes functions a value?
+#### You can assign functions to variables and reuse them
+
+We already covered this topic when it came to anonymous functions. Functions can be saved in variables and re-used as many times as you want.
+![alt text](image-19.png)
+
+### Pass them as arguments
+
+You can create a function that receives another function and performs additional. Such functions are known as callback functions which I will cover later in this post.
+![alt text](image-20.png)
+In the example above, I have a function called calculate that has three parameters. The third parameter is a callback which will be a function.
+
+I have two various functions that I can potentially pass as an argument (value). It can be either a sum function or a multiple function. These functions on their own don’t do anything until I pass them.
+
+Inside the calculate function I create a variable named result and there I will be saved the result of the callback function.
+
+The callback is just a name but when I pass, let’s say the function named sum, it will be used as a value.
+
+The sum function will receive a and b from the calculate function and return me the sum.
+
+The same applies to another function, multiple.
+
+### Return functions from functions
+Function can not only use other functions but they can also return functions. This usually takes place when it comes to closures or factory functions which we will cover shortly.
+
+Here is a simple example:
+![alt text](image-21.png)
+#1 First I create a reusable function that receives a message and returns a new function that will log the message along with its argument.
+
+#2 Next, I save the result of the createMessage function in the variables receivedMessage. If you log this variable to the console, it will be a reference to the function. Try it out yourself!
+
+#3 Next, I call this variable as if it’s a function, because it has a function value and I pass an argument “Nina”.
+
+### Asynchronous JavaScript
+In order to implement asynchronous flow, there are several ways:
+
+- Callbacks
+- Promises
+- Async/await
+- Timers
+- Event loops
+- Non-blocking I/O (input/output)
+- Right now we are going to cover only callbacks.
+
+### Callback function
+The callback is a function that is an argument of another function.
+
+Due to the nature of JavaScript, you cannot call all the functions at the same time. If you remember, for each function we have a separate function execution context and they are piled up on top of each other.
+
+Functions do not execute at the same time. They execute depending on where and how we call them. Can you guess the result here?
+![alt text](image-22.png)
+I created functions in one order but called them in a different one.
+
+What is going to happen?
+
+It will log to the console numbers two, one, and three because I call them in such order.
+
+But what happens this time?
+![alt text](image-23.png)
+
+I call all the functions before I even create them.
+
+Will this throw an error?
+
+No, it will have the exact same result: two, one, and three.
+
+If you don’t understand why, I recommend you go back to the execution context explanation.
+
+The main takeaway here was not the execution context but the fact that the results are provided according to the order I called the functions.
+
+But what if there is a situation when you want to call the function only when the previous function was triggered?
+
+Imagine a real-life example, a restaurant.
+
+#1 You go to the restaurant and the cashier takes your order
+
+#2 After the cashier takes your order, you are given an order number
+
+#3 You take a seat and wait for the order
+
+#4 When the food is ready, the cashier calls you by your order number
+
+Image all these actions are functions. For every customer, the cashier produces actions like taking an order, passing the order so it’s prepared, and calling you when the order is ready.
+
+For the cashier to call you, they depend on another function, which is the preparation of the order. So they wait for another person.
+
+While the food is being prepared and you are waiting at the table, this process is called asynchronous action. While you are waiting there is an order being prepared and this doesn’t prevent the other customer from placing the order.
+
+If all these actions had to be synchronous then when you ordered, the order would need to prepare right away without you waiting, you would need to take the order you made and only then the next person would be able to place an order.
+
+They cannot call you right after you make an order but while you are waiting they are preparing the order. On the other hand, they also need to know how to get back to you while you are waiting at your table. That’s why you have your order number, it’s a way to get back to you.
+
+A callback is a way to call back. So, when the order is ready they use this callback to get back to you and tell you to take the order.
+
+The food preparation function is executing and when it’s done it’s automatically ready to use your order number to get back to you and tell you to take your order.
+
+In short, you are attaching one function to another function. Here is a minimalistic example:
+![alt text](image-24.png)
+
+### What is a property?
+Property is a key-value pair of an object, in other words, objects are collections of these properties.
+![alt text](image-25.png)
+
+Another difference between a function and a method is that functions can exist on their own, they don’t have to be attached to something else. The only thing they are attached to is the global object.
+
+Methods however cannot exist on their own and they need to be a property of something else, in this case, objects.
+
+They define the behavior of the object they are located in and operate on the other properties within this object.
+
+That’s why calling functions and calling methods are also different.
+
+To call a function you simply use the name of the function however to call the method, you need to use the object name along with the dot notation.
+![alt text](image-26.png)
+
+### Built-in Methods
+Now, that we understand what methods are, time for built-in methods.
+
+Built-in methods are pre-written methods that are part of JavaScript.
+
+These methods perform regular tasks without the need to write everything from scratch.
+
+Built-in methods save a lot of time and provide guaranteed functionality.
+
+When you create a function yourself, you might miss out on something but the built-in methods are already there, ready to do the job for you.
+
+On top of that, these methods are pre-compiled and optimized meaning that they have better performance. In JavaScript, there are various built-in objects that provide various functionalities and they also come along with their built-in methods.
+
+### String built-in method
+There are a lot of built-in string methods which have various purposes but let’s say we have a string and we want to find at what index a specific letter is located. Instead of creating a function ourselves, we can use a built-in method indexOf().
+
+Here is an example:
+![alt text](image-27.png)
+- or string k method k bare me aap or b parh sakty hy.
+
+There you go, it’s so simple. We took the string name and with the dot, a notation used the method name as well as passed whatever we were searching for.
+
+### Number built-in method
+There are tons of useful methods that work with numbers.
+
+One of them can receive a number and return a fixed amount of fractional part. So if I have 9.9 it should return 9, if 1.145 it should return 1.
+![alt text](image-28.png)
+
+## Arrow function expressions
+Now that we know what function expressions are, it will be much easier to understand what an arrow function is.
+
+An arrow function is a more modern alternative to traditional function expressions.
+#### The benefits of the arrow function are:
+
+Readable, simple, one-liner syntax: You can omit the keyword function, braces, and even return.
+![alt text](image-29.png)
+- aap k pass ye second wala arrow function hy or upar wala wo simple sa function hy.
+
+It’s important to note that you cannot always avoid braces and it can be done only when you have one statement in the function body.
+
+Otherwise, you have to use braces.
+![alt text](image-30.png)
+
+### const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+const a2 = a.map(function (s) {
+  return s.length;
+});
+
+console.log(a2); // [8, 6, 7, 9]
+
+const a3 = a.map((s) => s.length);
+
+console.log(a3); // [8, 6, 7, 9]
+![alt text](image-31.png)
+
+This doesn’t make sense much but let’s go further.
+
+When you call the generator function it doesn’t execute right away like a regular function.
+
+Instead, it creates an iterator object aka a generator object which is going to control the execution of our generator function.
+
+Iterator is kind of a tool or feature in JavaScript that enables us to go through each value, one at a time, across various collections of data.
+
+Iterator object has various methods that help us to control the execution process of the function.
+
+Let’s save the generator function and inspect what it creates:
+![alt text](image-32.png)
+Once we check the console, this is what we get:
+![alt text](image-33.png)
+
+When we call the function it simply creates this generator object but we need to use methods to make the function do something.
+
+So it doesn’t execute the function, it’s a tool to execute the function in the future.
+
+### Unary functions
+In JavaScript, an unary function is a function that takes only one argument and transforms its value.
+![alt text](image-34.png)
+Though this is a very simple example, there are many various situations where we can use unary functions.
+
+### Top-level functions
+In JavaScript, you will, from time to time, hear a term top-level function. It’s not very popular but good to know. The top-level function is simply a function that is located in the global scope. It’s the topmost function. It’s not wrapped by other functions, it’s not located inside any objects, classes, or any “interface”. In other words, they are directly located in the global object aka window object.
+![alt text](image-35.png)
+- or issi trha iss function k andar function ko nested function b kaha jata hy.
+
+### Recursion
+Recursion in Javascript is a technique where a function calls itself in order to perform a specific task.
+
+The function might keep calling itself until we give an indication that it reached the endpoint. To avoid endless recursion we provide a so-called Base Case. Base Case is a condition(s) that stops the recursion.
+
+Recursion is often used in more complex calculations that break down large problems into smaller ones.
+
+Let’s create a simple recursive function to illustrate how it works. This is a simple example, as recursion is often used in more complex calculations.
+
+Image, we want to calculate the sum of all positive numbers from one to the number we provided.
+
+If the number provided is 4, I want the sum of 1, 2, 3, and 4.
+
+To achieve this, we can pass the number to the function and calculate the sum by taking the number plus this number minus one, so it will be the previous number.
+
+If we pass 4, we will take this 4 and to add the previous num, it will be 4–1 so it’s 3, then 3–1 makes it 2, and so on.
+
+If it continues this way, we might go into minus. That is why, when creating recursion we need to think of a base case that will stop this recursion at some point.
+
+As we decided to work with positive numbers, it means we simply need to stop the recursion when we reach the number 1. We don’t want 1 to go below one.
+![alt text](image-36.png)
+Let’s understand the process above.
+
+-The function getSum receives a number 4. Checks if it equals 1 and if it doesn’t we move to the else block.
+
+-The function returns 4 + a result received in the getSum where we pass 4–1.
+
+-What will be the result of 4 + the result of getSum? It will be 4 + 3 + again the result of the getSum. The number in the if block is not 1 yet, so we still move to the else block.
+
+-What will be the result of 4 + 3 + getSum result? It will be 4 + 3 + 2 + again the result of getSum.
+
+-We finally reach the point where the passed “n” parameter equals 1 so the getSum returns 1 and ends there.
+
+-As a result we have 4 + 3 + 2 + 1 which makes it 10.
+
+The function keeps calling itself recursively until we reach the base case of 1.
+
+# Cheat Sheeto Of Methods
+![alt text](image-37.png)
+![alt text](image-38.png)
+number
+![alt text](image-39.png)

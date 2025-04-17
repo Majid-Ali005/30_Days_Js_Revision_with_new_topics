@@ -387,4 +387,93 @@ let showResult = myObj[p1][p2];
 console.log(showResult); // output: BMW
 ```
 
+## JavaScript Object Methods
+- Object methods are actions that can be performed on objects.
+- A method is a function definition stored as a property value.
+![alt text](image-5.png)
 
+::::: Example:
+```bash
+// Object Method
+// A method is a function definition stored as a property value.
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+
+  let result = person.fullName();
+  console.log(result); // output: John Doe
+```
+- In the example above, this refers to the person object:
+- jaise hum logo ne pehly b kaha tha k this ka jo keyword hy ye aap k pass object ko target krtha hy etc.
+- this.firstName means the firstName property of person.
+- this.lastName means the lastName property of person.
+
+### Accessing Object Methods
+- You access an object method with the following syntax:
+```bash
+objectName.methodName()
+```
+- If you invoke the fullName property with (), it will execute as a function:
+```bash
+// accessing object method
+  const person1 = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+  let result1 = person.fullName();
+  console.log(result1); // output: John Doe
+```
+- If you access the fullName property without (), it will return the function definition:
+```bash
+name = person.fullName;
+```
+
+### Adding a Method to an Object
+- Adding a new method to an object is easy:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>Adding a Method</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+};
+
+// Add a Method
+person.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+// Display Object Data
+document.getElementById("demo").innerHTML =
+"My father is " + person.name(); 
+</script>
+
+</body>
+</html>
+
+```
+### Using JavaScript Methods
+- This example uses the JavaScript toUpperCase() method to convert a text to uppercase:
+```bash
+person.name = function () {
+  return (this.firstName + " " + this.lastName).toUpperCase();
+};
+```

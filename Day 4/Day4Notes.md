@@ -235,4 +235,15 @@ console.log(result);
 - or me jo x.age = 10; kr rha ho ye mere pass person me data ko save kr rha hy jo age 50 ko age 10 kr rha hy.
 - tho yaha pr mere pass jo person hy ab oss ki copy ban k agaye hy x simple
 
-google: javascript objects medium ye perhna hy medium se magr first w3s complete krna hy full objects
+## JavaScript Object Properties
+- An Object is an Unordered Collection of Properties
+- Properties are the most important part of JavaScript objects.
+- Properties can be changed, added, deleted, and some are read only.
+- matlab aap javaScript ki properties ko deletek, add etc kr sakty ho.
+### Accessing JavaScript Properties
+- aap javaScript k propertis ko access krne k liye simply aap ko apne object ka naam likna hy or phir oss properties ka naam jiss ko aap access krna chahtay hy etc.
+- The syntax for accessing the property of an object is:
+```bash
+// objectName.property
+let age = person.age;
+```

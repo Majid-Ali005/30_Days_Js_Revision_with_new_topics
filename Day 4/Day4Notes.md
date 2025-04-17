@@ -329,4 +329,62 @@ const person = {
 - The delete keyword deletes both the value of the property and the property itself.
 - After deletion, the property cannot be used before it is added back again.
 
+### Nested Objects
+- tho aap baki cheezo ki trha object me b nested object ko bana sakty ho easily.
+- Property values in an object can be other objects:
+
+```bash
+// Create nested Objects
+const myObj = {
+    name: "John",
+    age: 30,
+    myCars: {
+      car1: "Ford",
+      car2: "BMW",
+      car3: "Fiat"
+    }
+  }
+  let result = myObj.myCars.car2;;
+  console.log(result); // Output: BMW
+```
+- tho agr aap iss example me dekhe tho hum ne myObj k andar dosra object myCars ka banaya hy or phir result k variable me oss me se myObj me se myCars me ja rha ho or phir car2 ko print kr rha ho etc.
+
+:::: Some Another Example:
+```bash
+// Create nested Objects
+const myObj = {
+    name: "John",
+    age: 30,
+    myCars: {
+      car1: "Ford",
+      car2: "BMW",
+      car3: "Fiat"
+    }
+  }
+  let result = myObj.myCars.car2;;
+  console.log(result); // Output: BMW
+  let result2 = myObj.myCars["car1"]; // tho aap iss trha se direct key se b print kr sakty hy no problem.
+  console.log(result2); // output: Ford
+  let result22 = myObj["myCars"]["car2"]; // aap iss trha se b access kr sakty hy.
+  console.log(result22); // output: BMW
+```
+- aap aik aik key jo propeties hoti hy object ki aap oss ko aik aik kr k varible me b store kr sakty hy for this see below.
+```bash
+// Create nested Objects
+const myObj = {
+  name: "John",
+  age: 30,
+  myCars: {
+    car1: "Ford",
+    car2: "BMW",
+    car3: "Fiat"
+  }
+}
+
+let p1 = "myCars";
+let p2 = "car2";
+let showResult = myObj[p1][p2];
+console.log(showResult); // output: BMW
+```
+
 

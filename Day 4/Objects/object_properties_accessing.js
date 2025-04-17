@@ -12,3 +12,7 @@ const person = {
 // objectName.property
 let age = person.age; // tho aap iss trha se objectName se properties ko access kr sakty hy.
 console.log(age); // Output: 25
+
+//objectName["property"]
+let age1 = person["age"]; // aap iss trha se direct key ko likh kr b properties ko print kr sakty hy.
+console.log(age1); // output: 25

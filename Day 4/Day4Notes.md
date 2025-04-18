@@ -682,3 +682,82 @@ let result = "My father is " + myFather.nationality + ". My mother is " + myMoth
 console.log(result); // output: My father is English. My mother is English
 ```
 
+### Adding a Property to an Object
+- Adding a property to a created object is easy:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person objects
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+// Add nationality to first object
+myFather.nationality = "English";
+
+// Display nationality 
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.nationality; 
+</script>
+
+</body>
+</html>
+
+```
+
+#### Note:
+- The new property will be added to myFather. Not to any other Person Objects.
+
+### Built-in JavaScript Constructors
+
+JavaScript has built-in constructors for all native objects:
+- new Object()   // A new Object object
+- new Array()    // A new Array object
+- new Map()      // A new Map object
+- new Set()      // A new Set object
+- new Date()     // A new Date object
+- new RegExp()   // A new RegExp object
+- new Function() // A new Function object
+
+### Note:
+The Math() object is not in the list. Math is a global object. The new keyword cannot be used on Math
+
+::::: Complete JavaScript Built-in Constructor Example:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Display the Type
+document.getElementById("demo").innerHTML =
+"<p>The typeof new Object() is " + typeof new Object() + "</p>" +
+"<p>The typeof new Array() is " + typeof new Array() + "</p>" +
+"<p>The typeof new Map() is " + typeof new Map() + "</p>" +
+"<p>The typeof new Set() is " + typeof new Set() + "</p>" +
+"<p>The typeof new Date() is " + typeof new Date() + "</p>" +
+"<p>The typeof new RegExp() is " + typeof new RegExp() + "</p>" +
+"<p>The typeof new Function() is " + typeof new Function() + "</p>";
+</script>
+
+</body>
+</html>
+
+```
+

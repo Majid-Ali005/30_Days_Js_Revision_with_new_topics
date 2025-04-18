@@ -799,3 +799,194 @@ document.getElementById("demo").innerHTML =
 
 ```
 
+## Medium Article
+#### Mastering JavaScript Objects: A Comprehensive Guide to Object-Oriented Programming
+![alt text](image-6.png)
+- Objects are a fundamental data type in JavaScript, used to store collections of key-value pairs. They are versatile and can be used to represent complex data structures, model real-world entities, and encapsulate related data and behavior.
+### Creating and initializing objects
+There are several ways to create objects in JavaScript. The most common way is using object literal notation. Object literals are written in the form of key-value pairs, where each key is a string and each value can be any valid JavaScript data type.
+```bash
+// Object initialization
+let person = {
+    name: 'Millie',
+    age: 30,
+    greet: function () {
+      console.log(`Hello, my name is ${this.name}`);
+    }
+  };
+  ```
+  - You can also create an empty object and add properties and methods later. Like we are adding make and model properties and start method, which is starting the car.
+  - matlab aap empty object bana kr oss k andar phir properties ko add kr sakty hy.
+
+```bash
+// Empty Object
+let car = {};
+car.make = 'Toyota';
+car.model = 'Camry';
+car.start = function () {
+  console.log('Starting the car....v-v-v-vroom....v-v-v-vroom!');
+};
+```
+#### Object properties and methods
+Properties are key-value pairs that store data, while methods are functions that define the behavior of an object.
+```bash
+console.log(person.name); //Access property: 'Millie'
+person.greet(); // Call method: 'Hello, my name is Millie'
+```
+- Accessing and modifying object properties: You can access and modify object properties using dot notation or bracket notation.
+```bash
+person.age = 31; // Modify property using dot notation
+person['age'] = 32; // Modify property using bracket notation
+```
+
+### Nested objects
+Objects can contain other objects as properties, creating nested structures. Here we create objects having the properties of the other objects, this process is called as nesting of objects. Nesting helps in handling complex data in a much more structured and organized manner by creating a hierarchical structure.
+
+```bash
+let student = {
+  name: 'Charles',
+  age: 20,
+  address: {
+    street: '123 Main St',
+    city: 'Los Angeles',
+    state: 'CA'
+  }
+};
+console.log(student.address.city); // Access nested property: 'Los Angeles'
+```
+### Object constructors
+We can create objects using a constructor function, which acts as a blueprint for creating multiple objects with the same structure. It is considered good practice to name constructor functions with an upper-case first letter.
+
+```bash
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+let jeremy = new Person('Jeremy', 30);
+let zara = new Person('Zara', 25);
+
+jeremy.greet(); // 'Hello, my name is Jeremy'
+zara.greet(); // 'Hello, my name is Zara'
+```
+- Here we have created an Object Type Person. Now, we can create many new Person objects. Jeremy and Zara are two Person objects. We can also call the greet method on the Jeremy and Zara objects, which will output the greeting message based on the input name while creating a constructor.
+
+### Prototypes and inheritance
+All objects in JavaScript inherit properties and methods from a prototype. We can add properties and methods to an object’s prototype, which all instances of that object will inherit. In our code, we are adding a new method called introduce to the Person constructor. Then we are calling the introduce method on the Jeremy and Zara objects, printing their names and ages to the console.
+
+```bash
+Person.prototype.introduce = function() {
+  console.log(`My name is ${this.name}, and I'm ${this.age} years old.`);
+};
+
+jeremy.introduce(); // 'My name is Jeremy, and I'm 30 years old.'
+zara.introduce(); // 'My name is Zara, and I'm 25 years old.'
+```
+
+### Classes (ES6 syntax)
+JavaScript added a syntactical sugar for creating objects using a class-like syntax. It starts with the class keyword, followed by the class name Person. Inside the curly braces, the class body defines a constructor and a method called greet. Then we create a new object named olivia, and call the greet method on the olivia object.
+
+```bash
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+let olivia = new Person('Olivia', 30);
+olivia.greet(); // 'Hello, my name is Olivia'
+```
+
+### Object destructuring
+You can extract values from objects and assign them to variables using restructuring. Our code defines an object named car using object literal notation with two properties. Then we are using object destructuring to assign the value of the object properties to the variables we listed. An equivalent way to achieve the same result without destructuring is to assign values to separate variables using dot notation.
+
+```bash
+let car = {model: 'Mustang', engine: 'V8'};
+let { model, engine } = car;
+
+// This is similar to
+// const model = car.model;
+// const engine = car.engine;
+
+console.log(model); // 'Mustang'
+console.log(engine); // 'V8'
+```
+
+### Spread operator with objects
+The spread operator can be used to copy properties from one object to another or to combine multiple objects into a new object. Here we are defining two objects: car1 and car2, with properties: model and engine respectively. Then we created a new object named combined in which we merged two objects using the spread operator.
+
+```bash
+let car1 = {model: 'Mustang'};
+let car2 = {engine: 'V8'};
+let combined = { ...car1, ...car2 };
+
+console.log(combined); // {model: 'Mustang', engine: 'V8'}
+```
+
+# Object Syntax:
+In JavaScript, objects are defined using curly braces {}. Each key-value pair is separated by a colon : and multiple pairs are separated by commas , . The key is always a string (or a symbol), and the value can be of any data type, including numbers, strings, other objects, arrays, functions, etc.
+
+### Object Iteration:
+You can iterate over the properties of an object using loops like for…in or Object.keys(), Object.values(), or Object.entries() methods.
+```bash
+for (let key in person) {
+ console.log(key, person[key]);
+}
+// Using Object.keys()
+const keys = Object.keys(person);
+keys.forEach(key => console.log(key, person[key]));
+
+// Using Object.values()
+const values = Object.values(person);
+values.forEach(value => console.log(value));
+
+// Using Object.entries()
+const entries = Object.entries(person);
+entries.forEach(([key, value]) => console.log(key, value));
+```
+
+##### Spread Operator (Object Cloning #3): It uses the spread operator ({...}) to create a new object R5 and spreads all properties of R1 into R5.
+```bash
+//that is called spread operator
+let R5 = {...R};
+```
+
+### Creating Objects with Classes (ES6):
+With the introduction of ES6, JavaScript also supports class syntax for creating objects. Classes are syntactical sugar over constructor functions and prototypes.
+
+```bash
+class Person {
+ constructor(name, age) {
+ this.name = name;
+ this.age = age;
+ }
+sayHello() {
+ console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+ }
+}
+const person1 = new Person('Alice', 25);
+const person2 = new Person('Bob', 30);
+person1.sayHello(); // Output: "Hello, my name is Alice and I'm 25 years old."
+person2.sayHello(); // Output: "Hello, my name is Bob and I'm 30 years old."
+```
+
+- Classes provide a more structured and intuitive way to create objects with constructors and methods.
+
+### Object Destructuring:
+ES6 introduced object destructuring, allowing you to extract properties from an object and assign them to variables:
+
+```bash
+const { name, age } = person;
+console.log(name); // Output: "John Doe"
+console.log(age); // Output: 31
+```
+
+

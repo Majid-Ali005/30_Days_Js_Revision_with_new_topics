@@ -586,3 +586,60 @@ console.log(result);
 // Apples: 500
 ```
 
+### Using JSON.stringify()
+- JavaScript objects can be converted to a string with JSON method JSON.stringify().
+- JSON.stringify() is included in JavaScript and supported in all major browsers.
+#### Note:
+- The result will be a string written in JSON notation:
+- {"name":"John","age":50,"city":"New York"}
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>Display Properties with JSON</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Display JSON
+document.getElementById("demo").innerHTML = JSON.stringify(person);
+</script>
+
+</body>
+</html>
+
+```
+## JavaScript Object Constructors
+### Object Constructor Functions
+- Sometimes we need to create many objects of the same type.
+- To create an object type we use an object constructor function.
+- It is considered good practice to name constructor functions with an upper-case first letter.
+```bash
+// Constructor Function for Person objects
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+  }
+  // Create a Person object
+  // tho aap k pass object kuch iss trha se banaya jata hy.
+const myFather = new Person("John", "Doe", 50, "blue");
+// Display age
+let result = "Ali is " + myFather.age + "."; 
+console.log(result); // output: Ali is 50.
+
+```
+#### Note:
+- In the constructor function, this has no value.
+- The value of this will become the new object when a new object is created.
+
+

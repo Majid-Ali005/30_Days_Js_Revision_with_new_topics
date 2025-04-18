@@ -760,4 +760,42 @@ document.getElementById("demo").innerHTML =
 </html>
 
 ```
+### Did You Know?
+- Use object literals {} instead of new Object().
+- Use array literals [] instead of new Array().
+- Use pattern literals /()/ instead of new RegExp().
+- Use function expressions () {} instead of new Function().
+
+- "";           // primitive string
+- 0;            // primitive number
+- false;        // primitive boolean
+
+- {};           // object object
+- [];           // array object
+- /()/          // regexp object
+- function(){}; // function
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+
+<script>
+// Display the type of all
+document.getElementById("demo").innerHTML =
+'<p>The typeof "" is ' + typeof "" + '</p>' +
+'<p>The typeof 10 is ' + typeof 10 + '</p>' +
+'<p>The typeof false is ' + typeof false + '</p>' +
+'<p>The typeof {} is ' + typeof {} + '</p>' +
+'<p>The typeof [] is ' + typeof [] + '</p>' +
+'<p>The typeof /()/ is ' + typeof /()/ + '</p>' +
+'<p>The typeof function(){} is ' + typeof function(){} + '</p>';
+</script>
+
+</body>
+</html>
+
+```
 

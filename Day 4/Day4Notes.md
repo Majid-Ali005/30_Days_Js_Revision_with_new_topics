@@ -477,3 +477,79 @@ person.name = function () {
   return (this.firstName + " " + this.lastName).toUpperCase();
 };
 ```
+
+### JavaScript Display Objects
+#### How to Display JavaScript Objects?
+- Displaying a JavaScript object will output [object Object].
+- javaScript display Objects ka matlab simple ye hy k hum ne jo object banaya hy oss ko kaise display kare. 
+```bash
+// Create an Object
+const person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+  // Display Object
+  let result = person;
+  console.log(result); // { name: 'John', age: 30, city: 'New York' }
+  document.write(result); // [object object]
+  // ye resutl aap k IDE pr b depend krtha hy k aap konse ko use kr rhy hy online ya phir offline me etc tho iss wja se b aap k pass different anser atay hy.
+```
+- ye resutl aap k IDE pr b depend krtha hy k aap konse ko use kr rhy hy online ya phir offline me etc tho iss wja se b aap k pass different anser atay hy. Tho iss se confuse nhi hona hy etc.
+- tho aap ko sahi IDE ko select krna chaye hy jaha pr aap ko sahi result mille etc.
+
+
+##### Some solutions to display JavaScript objects are:
+
+- Displaying the Object Properties by name
+- Displaying the Object Properties in a Loop
+- Displaying the Object using Object.values()
+- Displaying the Object using JSON.stringify()
+- tho Matlab aap ane object k properties ko different ways me print kr sakty hy etc.
+
+#### Displaying Object Properties
+- The properties of an object can be displayed as a string:
+```bash
+// Create an Object
+const person1 = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+  
+  let result1 = person1.name + ", " + person1.age + ", " + person1.city;
+  console.log(result); // { name: 'John', age: 30, city: 'New York' }
+```
+
+### Displaying Properties in a Loop
+- Ab me loops ko me objects k properties ko print karonga.
+- The properties of an object can be collected in a loop:
+```bash
+/**
+ * yaha pr hum logo ne pehly simple aik object banaya hy person k name se.
+ * or phir aik variable banaya hy let text = ""; k naam se jiss ko hum log use karenge loop me properties ko print krne k liye.
+ * or phir me javaScript k in keyword ko use kr rha ho loop me. or phir simplye assignment += operator laga kr object ko print kr rha ho.
+ */
+
+// Create an Object
+const person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+  // Build a Text
+let text = "";
+for (let x in person) {
+  text += person[x] + " ";
+};
+let result = text;
+console.log(result); // John 30 New York 
+```
+#### Note:
+- You must use person[x] in the loop.
+- person.x will not work (Because x is the loop variable).
+
+### Using Object.values()
+- ab hum object.values ki madad se loop ko print karenge.
+- Object.values() creates an array from the property values:
+

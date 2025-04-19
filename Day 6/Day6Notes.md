@@ -1119,3 +1119,42 @@ console.log(typeof(showResult)); // object
 const person2 = {firstName:"John", lastName:"Doe", age:46};
 console.log(person2.firstName); // output: John
 ```
+
+## Array Elements Can Be Objects
+- jaise hum ne upar jana b tha k js me everything is object aap k pass variable sub kuch js me object hota hy magr array aik special type of object hota hy etc.
+- JavaScript variables can be objects. Arrays are special kinds of objects.
+- Because of this, you can have variables of different types in the same Array.
+- You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+```bash
+let myArray = [];
+
+myArray[0] = Date.now;
+myArray[1] = "myFunction";
+myArray[2] = "MyCars";
+console.log(myArray);
+
+```
+## Array Properties and Methods
+The real strength of JavaScript arrays are the built-in array properties and methods:
+```bash
+cars.length   // Returns the number of elements
+cars.sort()   // Sorts the array
+// bs simply yaha pr ye cars ki jagah aap ko apne array ka name dena hy.
+// or .length se aap k pass array ki length nikal k ajayegi.
+// or .sort se aap k pass array sort hojayegi.
+```
+- or ye array k methods ko hum log aghy k chapter me cover krne wale hy.
+- Array methods are covered in the next chapters.
+
+## The length Property
+The length property of an array returns the length of an array (the number of array elements).
+```bash
+
+//Array Length in js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;
+console.log(length); // output: 4
+// aap k pass output 4 iss wja se a rha hy q k array me items 4 hy.
+```
+- The length property is always one more than the highest array index.
+

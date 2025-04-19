@@ -962,3 +962,88 @@ console.log(fruit); // output: sara array aap k pass print hojayega. jitne b ele
 // array ko [] iss square brackets se banaya jata hy iss [] square bracket ka matlab hota hy array'
 // or iss curly {} brackets ka matlab hota hy k objects tho ye aap ko kahi pr b dekhe tho aap ne samjh lena hy k ye aik oject hoga etc.
 ```
+## Why Use Arrays?
+- jaise hum kisi b value ko store krne k liye variable ka use krthy hy. jaise for example mujhe 100 entries ko store krna hy tho mujhe iss k liye 100 variables banane parhenge magr iss ki jagah aap array ka b use kr sakty hy jaha pr aap aik hi array me sare 100 entries ko store krloge etc simple.
+- If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+```bash
+// Example
+let car1 = "Saab";
+let car2 = "Volvo";
+let car3 = "BMW";
+```
+
+- However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+
+#### The solution is an array!
+
+An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+### Creating an Array
+![alt text](image-4.png)
+- Common practice hamare pass ye hoti hy k array ko const k keyword k sath banaya jata hy. Or Objects ko b etc.
+```bash
+// Example
+const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars);
+```
+
+- Spaces and line breaks are not important. A declaration can span multiple lines:
+```bash
+// spacing is not required
+const cars1 = [
+    "Saab",
+    "Volvo",
+    "BMW"
+  ];
+  console.log(cars1);
+  // tho aap array ko iss trha b bana sakty hy for readabiliyt etc.
+  ```
+  - You can also create an array, and then provide the elements:
+  - aap pehly array ko bana sakty hy or baad me oss k andar items ko add kr sakty hy.
+
+```bash
+// creating empty array and then add items into array
+  const cars2 = [];
+cars2[0]= "Saab";
+cars2[1]= "Volvo";
+cars2[2]= "BMW";
+// print array in console
+console.log(cars2);
+```
+
+## Using the JavaScript Keyword new
+The following example also creates an Array, and assigns values to it:
+
+```bash
+// Creating Array in js with new keyword
+/**
+ * simply aap ko new keyword ka use krna hy or phir Array ko likhna hy or phir parenthesis me apne items ko store krna hy etc.
+ * Array or new k keyword laga howa hona chaye hy warna phir error milega etc.
+ */
+const cars = new Array("Saab", "Volvo", "BMW");
+console.log(cars); // [ 'Saab', 'Volvo', 'BMW' ]
+```
+
+- Zaroori nhi hy k aap iss new Array() keword ko lagaye. aap iss k ilawa b bana sakty hy etc.
+- The two examples above do exactly the same.
+- There is no need to use new Array().
+- For simplicity, readability and execution speed, use the array literal method.
+
+## Accessing Array Elements
+You access an array element by referring to the index number:
+
+```bash
+// Accessing Array Elements
+/**
+ * aap ko simply apne array k name likhna hy or phir square brackets [] me oss k jiss elemtns ko aap print krna chatay hy
+ * oss index ko likhna hy.
+ * hamare pass output me Volvo iss wja se a rha hy q k 1 index b volvo hy iss wja se jiss ko hum access kr rhy hy etc.
+ */
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[1]; // [0] = "Saab", [1] = "Volvo", [2] = "BMW"
+console.log(car); // output: Volvo
+```
+
+#### Note:
+- Array indexes start with 0.
+- [0] is the first element. [1] is the second element.

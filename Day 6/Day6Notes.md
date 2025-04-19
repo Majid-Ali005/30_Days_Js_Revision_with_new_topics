@@ -1047,3 +1047,24 @@ console.log(car); // output: Volvo
 #### Note:
 - Array indexes start with 0.
 - [0] is the first element. [1] is the second element.
+
+### Changing an Array Element
+- Aap array ki indexing ko use krthy howe array k items ko update matlab new items ko add kr sakty hy etc.
+- This statement changes the value of the first element in cars:
+
+```bash
+// Syntax Example
+cars[0] = "Opel";
+```
+:::::: Example:
+```bash
+// Changing an Array Element
+/**
+ * yaha pr aap k pass agr aap dekhe tho aap k pass uzair print hojana chaye hy tha magr oss ko hum ne change krliya hy.
+ * cars[0] = "Majid"; krliya hy tho oss wja se uzair ki jagah Majid Print ho rha hy.
+ * tho aap iss thra se array k elements ko change kr sakty hy etc.
+ */
+const cars = ["uzair", "Junaid", "Ali"];
+cars[0] = "Majid";
+console.log(cars); // output: [ 'Majid', 'Junaid', 'Ali' ]
+```

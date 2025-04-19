@@ -58,3 +58,27 @@ let y2 = "20";
 let z2 = x2 + y2;
 console.log(z2); // output: 1020
 ```
+
+#### A common mistake is to expect this result to be 30:
+- tho aap ko dekhna hy k kahi b agr string concatenate ho rha hy tho aap ne direct samjh jana hy k bhai yaha pr iss ka result b string k concatenations me hi ayega.
+
+```bash
+let x = 10;
+let y = 20;
+let z = "The result is: " + x + y;
+console.log(z); // output: 1020
+/**
+ * yaha pr aap k pass output me 1020 iss waja se a rha hy q k aap jo z ka variable hy oss me iss k sath string ko plus kr rhy hy matlab concatenate kr rhy hy iss wja se resutl 1020 a rha hy.
+ * let z = "The result is: " + x + y; --> yaha pr agr aap dekhe tho double quotation ko aap concatenate kr rhy hy numbers k sath etc.
+ */
+```
+
+- The JavaScript interpreter works from left to right.
+- First 10 + 20 is added because x and y are both numbers.
+- Then 30 + "30" is concatenated because z is a string.
+
+
+### JavaScript Number Methods
+
+These number methods can be used on all JavaScript numbers:
+![alt text](image.png)

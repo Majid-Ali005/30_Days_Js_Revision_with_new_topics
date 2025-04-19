@@ -12,3 +12,9 @@ console.log(z1); // output: 2020
  * yaha pr aap k pass output me 2020 iss wja se print ho rha hy q k aap string ko bana rhy ho magr oss k andar value numbers hy.
  * magr javaScript me aap jiss b cheez ko double ya phir single quotatoions me likhty hy tho ye oss ko string consider krtha hy iss wja se.
  */
+
+// adding string and numbers
+let x2 = 10;
+let y2 = "20";
+let z2 = x2 + y2;
+console.log(z2); // output: 1020

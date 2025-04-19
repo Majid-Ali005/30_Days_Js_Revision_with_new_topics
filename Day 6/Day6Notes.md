@@ -47,3 +47,14 @@ console.log(z1); // output: 2020
  * magr javaScript me aap jiss b cheez ko double ya phir single quotatoions me likhty hy tho ye oss ko string consider krtha hy iss wja se.
  */
 ```
+
+#### If you add a number and a string, the result will be a string concatenation:
+- matlab agr aap string or numbers ko aik dosre k sath concatenate krthy hy tho aap k pass string concatenation ayega matlab plus etc nhi hoga q k aap string ko number k sath print kr rhy hy etc.
+
+```bash
+// adding string and numbers
+let x2 = 10;
+let y2 = "20";
+let z2 = x2 + y2;
+console.log(z2); // output: 1020
+```

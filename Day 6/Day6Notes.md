@@ -915,3 +915,37 @@ console.log(processNumber(9007199254740992)); // "Warning: Not a safe integer"
 ---
 
 This explanation covers everything you need to know about JavaScript Numbers for interviews and projects. If you have specific questions or need more examples, let me know!
+
+
+# Medium
+JavaScript Numbers
+- JavaScript’s primary numeric type, Number, is used to represent integers and to approximate real numbers. JavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard, which means it can represent numbers as large as ±1.7976931348623157 × 10^-324.
+
+### Integer Literals
+In a JavaScript program, a base-10 integer is written as a sequence of digits. For example:
+```bash
+0
+3
+1000000
+```
+- In addition to base-10 integer literals, JavaScript recognizes hexadecimal (base-16) values. A hexadecimal literal begins with 0x or 0X, followed by a string of hexadecimal digits. A hexadecimal digit is one of the digits 0 through 9 or letters a (or A) through f (or F), which represent values 10 thorugh 15. Here are examples of hexadecimal integer literals:
+
+```bash
+0xff    // 255: (15*16 + 15)
+0xBADCAFE  // 195939070
+```
+### Floating-Point Literals
+- Floating-point literals can have a decimal point; they use the traditional syntax for real numbers. A real value is represented as the integral part of the number, followed by a decimal point and the fractional part of the number.
+
+### Arithmetic in JavaScript
+JavaScript programs work with numbers using the arithmetic operators, that the language provides. These include + for addition, — for substraction, * for multiplication, / for division, and % for modulo (remainder after division). ES2016 adds ** for exponentiation.
+
+In addition to these basic arithmetic operators, JavaScript supports more complex mathematical operations through a set of functions and constants defined as properties of the Math object:
+
+![alt text](image-1.png)
+
+ES6 defines more functions on the Math object:
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)

@@ -1098,3 +1098,24 @@ console.log(cars);
  * ye tho aap ko pata hoga jiss ko hum ne upar cover krliya hy.
  */
  ```
+### Arrays are Objects
+- Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+- But, JavaScript arrays are best described as arrays.
+- Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+```bash
+// arrays are objects
+const person = ["John", "Doe", 46];
+const showResult = person[0];
+console.log(showResult); // output: John
+console.log(typeof(showResult)); // object
+// bhia aaik baat ko yaad rakhna k aap loca IDE ko use kare q k online IDE me aap k pass different answers a sakty hy etc.
+```
+- Objects use names to access its "members". In this example, person.firstName returns John:
+
+### Object:
+```bash
+//Creating Object
+const person2 = {firstName:"John", lastName:"Doe", age:46};
+console.log(person2.firstName); // output: John
+```

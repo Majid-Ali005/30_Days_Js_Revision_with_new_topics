@@ -1158,3 +1158,82 @@ console.log(length); // output: 4
 ```
 - The length property is always one more than the highest array index.
 
+## Accessing the First Array Element
+- iss se aap k pass zero index pr jo hy wo print hojayega jo k banana hy etc.
+```bash
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits[0];
+```
+
+## Accessing the Last Array Element
+
+```bash
+//array last element
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+let fruit1 = fruits[fruits.length - 1];
+console.log(fruit1); // Mango
+// Mango hamare pass iss wja se print ho rha hy q k agr aap right side se indexing start kare tho pehly Mango ata hy.
+// q k hum ne -1 lagaya hy.
+```
+## Looping Array Elements
+One way to loop through an array, is using a for loop:
+
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>Looping an Array</h2>
+
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
+
+```
+- aap iss loop ko without ul,li k direct b javaScript me run kr sakty hy etc.
+
+- You can also use the Array.forEach() function:
+```bash
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The forEach() Method</h2>
+
+<p>Call a function for each array element:</p>
+
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+} 
+</script>
+
+</body>
+</html>
+
+```
+

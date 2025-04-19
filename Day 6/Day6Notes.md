@@ -1083,3 +1083,18 @@ console.log(change); // output: Banana,Orange,Apple,Mango
  * tho iss k output se pata chalta hy k bhai hamara array jo hy wo string me convert hogaya hy with the help of toString() Method.
  */
 ```
+
+### Access the Full Array
+- Full array ko access krne k liye bs aap ko kuch sorting, indexing etc nhi krni hy bs direct apne array ka naam likhna hy etc.
+- With JavaScript, the full array can be accessed by referring to the array name:
+
+```bash
+//creating array of cars
+const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars);
+/**
+ * aap ko iss trha se direct apne array ka naam likhna hy tho aap k pass pora array print hojayega.
+ * aap iss cars k array ko first aik variable me store kr k phir oss variable se b array ko print kr sakty hy.
+ * ye tho aap ko pata hoga jiss ko hum ne upar cover krliya hy.
+ */
+ ```

@@ -10,3 +10,12 @@ console.log(y); // output: 3
 ```
 - Extra large or extra small numbers can be written with scientific (exponent) notation:
 - Extrap small or extra large numbers ko aik scientific exponent notation me likha jata hy jiss k liye aap niche example ko dekh sakty ho.
+
+```bash
+// store extra large or extra small numbers in variable.
+let x1 = 123e5;    // 12300000 --> extra large number ko store krne k liye.
+let y1 = 123e-5;   // 0.00123  --> extra small number ko store krne k liye.
+
+console.log(x1); // output: 12300000
+console.log(y1); // 0.00123
+```

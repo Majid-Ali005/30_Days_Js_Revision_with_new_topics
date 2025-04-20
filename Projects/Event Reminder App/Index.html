@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Reminder App</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    #countdown { font-size: 24px; margin-top: 20px; }
+    input, button { margin: 10px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Event Reminder App</h1>
+  <label for="eventDate">Event Date:</label>
+  <input type="date" id="eventDate" />
+  <label for="eventTime">Event Time:</label>
+  <input type="time" id="eventTime" />
+  <button onclick="startReminder()">Start Reminder</button>
+  <div id="countdown"></div>
+
+  <script>
+    function startReminder() {
+      // Get user inputs
+      const dateInput = document.getElementById("eventDate").value;
+      const timeInput = document.getElementById("eventTime").value;
+      const countdownDiv = document.getElementById("countdown");
+
+      // Validate inputs
+      if (!dateInput || !timeInput) {
+        countdownDiv.innerHTML = "Please select both date and time!";
+        return;
+      }
+
+      // Create Date object (ISO format)
+      const eventDate = new Date(`${dateInput}T${timeInput}`);
+      if (isNaN(eventDate)) {
+        countdownDiv.innerHTML = "Invalid date or time!";
+        return;
+      }
+
+      // Display event date in local format
+      countdownDiv.innerHTML = `Event scheduled for: ${eventDate.toLocaleString("en-US", {
+        dateStyle: "long",
+        timeStyle: "short"
+      })}`;
+
+      // Update countdown every second
+      const timer = setInterval(() => {
+        const now = new Date();
+        const timeDiff = eventDate - now; // Difference in milliseconds
+
+        if (timeDiff <= 0) {
+          clearInterval(timer);
+          countdownDiv.innerHTML = "Event has started!";
+          return;
+        }
+
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        // Update countdown display
+        countdownDiv.innerHTML = `
+          Event: ${eventDate.toLocaleString("en-US", { dateStyle: "long", timeStyle: "short" })}<br>
+          Countdown: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds
+        `;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

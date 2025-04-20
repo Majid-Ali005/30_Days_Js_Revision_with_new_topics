@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Countdown Timer</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    #countdown { font-size: 24px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Event Countdown Timer</h1>
+  <input type="date" id="eventDate" />
+  <button onclick="startCountdown()">Start Countdown</button>
+  <div id="countdown"></div>
+
+  <script>
+    function startCountdown() {
+      // Get selected date from input
+      const eventDateInput = document.getElementById("eventDate").value;
+      if (!eventDateInput) {
+        alert("Please select a date!");
+        return;
+      }
+
+      // Create Date object from input
+      const eventDate = new Date(eventDateInput);
+      const countdownDiv = document.getElementById("countdown");
+
+      // Update countdown every second
+      const timer = setInterval(() => {
+        const now = new Date(); // Current date
+        const timeDiff = eventDate - now; // Difference in milliseconds
+
+        if (timeDiff <= 0) {
+          // Event has passed
+          clearInterval(timer);
+          countdownDiv.innerHTML = "Event has started!";
+          return;
+        }
+
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        // Display countdown
+        countdownDiv.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

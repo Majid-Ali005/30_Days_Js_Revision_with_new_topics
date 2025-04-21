@@ -889,15 +889,21 @@ console.log(randomNumber(0, 100));      // Integer: e.g., 42
 #### **Real-World Scenario**
 - **Use Case**: In a **lottery app**, generate a unique set of random numbers.
 ```javascript
-function generateLotteryNumbers(count, min, max) {
-  const numbers = new Set();
-  while (numbers.size < count) {
-    numbers.add(randomNumber(min, max));
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  return [...numbers];
-}
-console.log(generateLotteryNumbers(6, 1, 49)); // e.g., [7, 14, 23, 28, 35, 41]
+  
+  function generateLotteryNumbers(count, min, max) {
+    const numbers = new Set();
+    while (numbers.size < count) {
+      numbers.add(randomNumber(min, max));
+    }
+    return [...numbers];
+  }
+  
+  console.log(generateLotteryNumbers(6, 1, 49)); // e.g., [7, 14, 23, 28, 35, 41]
 ```
+- ye jaise aap k pass lottery app me different ways se different cheeze ati hy tho oss ko b aap iss trha se bana sakty ho etc.
 
 #### **Best Practices**
 1. **Input Validation**: Always check for `NaN`, invalid types, or incorrect ranges.

@@ -19,4 +19,8 @@ function getRandomInt(min, max) {
   const RandomNumber = Math.floor(Math.random() * ( b-a+1)) + a;
   console.log(`the random number is ${RandomNumber}`);
 
+
+  //aap iss trha se direct b random number ko run kr sakty hy magr ye koi b nhi krtha hy bs aap ko apne samjhne ya phir dosro ko samjhne k liye kr sakty ho.
+  console.log(Math.random());
+
   

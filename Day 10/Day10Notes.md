@@ -62,6 +62,8 @@ for (let naam of dost) {
 // Mera dost: Sara
 // Mera dost: Bilal
 ```
+- Note: yaha pr iss ko agr aap github k code space pr run krthy hy tho aap k pass error ayega k naam is not defined ye IDE pr b depend krtha hy aap k output tho jub mene iss ko online test kiya tho waha pr simple sa sahi ouput de rha tha etc.
+- tho kabhi kabar aap sahi hotay hy bs aap ko IDE ka masla ho sakta hy etc.
 
 #### Tip:
 - Agar index chahiye, toh `forEach` ya `for` loop use karo.

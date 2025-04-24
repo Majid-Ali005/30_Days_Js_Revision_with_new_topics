@@ -40,6 +40,14 @@ JavaScript (JS) ek high-level, interpreted programming language hai jo primarily
 **Syntax**:
 ```javascript
 let mySet = new Set([iterable]);
+
+// Example: bs ye iterable ki jagah apne collection ko store krna hy etc.
+// To create set
+let mySet = new Set(["hello",12,"ali","apple"]);
+console.log(mySet); // output: Set(4) { 'hello', 12, 'ali', 'apple' }
+// ye set for ka matlab ye hy k hamare array me 4 four items hy iss wja se ye a rha hy.
+
+
 ```
 
 **Examples**:

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-Up Form</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+  <h2>Sign-Up Form</h2>
+  <form id="signupForm">
+    <label>Email:</label><br>
+    <input type="text" id="email" /><br>
+    <span id="emailError"></span><br>
+
+    <label>Phone Number (+91 9876543210):</label><br>
+    <input type="text" id="phone" /><br>
+    <span id="phoneError"></span><br>
+
+    <label>Password (min 8 chars, 1 uppercase, 1 number):</label><br>
+    <input type="password" id="password" /><br>
+    <span id="passwordError"></span><br>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const passwordInput = document.getElementById("password");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const passwordError = document.getElementById("passwordError");
+
+    // Regex patterns
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const phoneRegex = /^\+91\s\d{10}$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Email validation
+      if (!emailRegex.test(emailInput.value)) {
+        emailError.textContent = "Invalid email format";
+        emailError.className = "error";
+        isValid = false;
+      } else {
+        emailError.textContent = "Valid email";
+        emailError.className = "success";
+      }
+
+      // Phone validation
+      if (!phoneRegex.test(phoneInput.value)) {
+        phoneError.textContent = "Invalid phone number (e.g., +91 9876543210)";
+        phoneError.className = "error";
+        isValid = false;
+      } else {
+        phoneError.textContent = "Valid phone number";
+        phoneError.className = "success";
+      }
+
+      // Password validation
+      if (!passwordRegex.test(passwordInput.value)) {
+        passwordError.textContent = "Password must be 8+ chars with 1 uppercase and 1 number";
+        passwordError.className = "error";
+        isValid = false;
+      } else {
+        passwordError.textContent = "Valid password";
+        passwordError.className = "success";
+      }
+
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+        emailError.textContent = "";
+        phoneError.textContent = "";
+        passwordError.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>

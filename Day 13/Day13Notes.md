@@ -18,6 +18,21 @@ const person = {
 };
 person.greet(); // Output: Hello, Rahul
 ```
+- this  keyword aik specific cheez variable ko target krtha hy. jaise agr aap apne iss upar wale program me se this.name me se this ko agr hata de tho phir aap ko error milega k bhai aap kiya kr rhy ho mujhe tho name k bare me pata nhi hy etc.
+
+```bash
+// ye aap ko error dega q k aap ne this nhi lagaya hy
+const person = {
+   name: "Majid Ali",
+   greet: function(){
+    // console.log("hello " + name); // Error: ReferenceError: name is not defined
+    console.log("hello " + this.name); // hello Majid Ali
+   }
+}
+
+person.greet();
+
+```
 
 **Key Point**: `this` ka value runtime pe determine hota hai, aur yeh context ke basis pe alag-alag cheezon ko point kar sakta hai.
 

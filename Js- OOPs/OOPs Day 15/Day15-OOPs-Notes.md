@@ -187,3 +187,16 @@ If you want more examples, a specific part explained further, or help with a cod
 - or object apne andar properties raktha hy jiss ko key paris of value kaha jata hy etc.
 
 
+## 1. Objects and Classes
+- In JavaScript, an object is a standalone entity, with properties and type.
+- hamare pass ES6 version se pehly jo porane version hy oss me class nhi howa krtha tha jiss ko hum log let ya phir const etc k sath banatay thy example k liye niche dekhe.
+```bash
+let dog = {
+ breed: 'Labrador',
+ color: 'black',
+ bark() {
+ console.log('Woof!');
+ }
+};
+dog.bark(); // Woof!
+```

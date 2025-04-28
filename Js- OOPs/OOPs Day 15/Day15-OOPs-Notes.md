@@ -228,3 +228,40 @@ class Animal {
    animal.speak(); // Dog makes a noise.
 ```
 - tho aap kuch iss trha se ES6 ki madad k sath classes ko bana sakty hy etc.
+
+## 2. Encapsulation
+
+![alt text](image-2.png)
+- Encapsulation means that the internal representation of an object is hidden from the outside.
+- Encapsulation ka simple matlab ye hota hy k andar k information ko outside k se chopa k rakhna jo b info ho aap k class ko andar oss ko koi bahir use na kar saky tho oss ko Encsulation ki madad se chupaya jata hy etc.
+- aap Encapsulation ko _ underscore ki madad se apply kr sakty ho easily.
+- NOTE: agr aap direct _ underscore k sath encapsulation krthy ho tho phir b aap ka variable jo hy access hoga tho iss ko access na karane k liye hum log private keyword ka use krthy hy etc.
+
+```bash
+// tho agr aap dekhe tho abhi b aap encapsulation jiss variable ko kiya howa hy oss ko aap abhi b access kr sakty ho tho iss ko na krne k liye hum log phir private ka use krthy hy jo k aghy hum log karege
+
+class Car {
+    constructor() {
+      this._speed = 0; // _speed is "private" by convention
+    }
+    setSpeed(newSpeed) { // Public method to control access
+      if (newSpeed >= 0) {
+        this._speed = newSpeed;
+      }
+    }
+    getSpeed() { // Public method to access data
+      return this._speed;
+    }
+  }
+  
+  let myCar = new Car();
+  myCar.setSpeed(100); // Use method to change speed
+  console.log(myCar.getSpeed()); // Output: 100
+  myCar._speed = -50; // Not recommended, but possible (not truly private)
+  console.log(myCar.getSpeed()); // Output: -50
+  ```
+  - tho agr aap iss example me dekhe tho ensule howa variable aap ab b use kr sakty hy tho iss ko secure krne k liye hum log private keyword ka use krthy etc. see example below.
+
+  
+
+

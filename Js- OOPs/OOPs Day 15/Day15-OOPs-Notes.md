@@ -191,12 +191,40 @@ If you want more examples, a specific part explained further, or help with a cod
 - In JavaScript, an object is a standalone entity, with properties and type.
 - hamare pass ES6 version se pehly jo porane version hy oss me class nhi howa krtha tha jiss ko hum log let ya phir const etc k sath banatay thy example k liye niche dekhe.
 ```bash
+/**
+ * tho agr aap yaha pr dekhe tho hamare pass jo hy class jo k dog k name se hy oss ko hum let k keyword se bana rhy hy.
+ * ab ye iss waja se let k keyword se bana rhy hy or class ko nhi use kr rhy hy q k hamare pass ES6 me Badd me class aya tha.
+ * magr ES6 k ane pehly hum log kuch iss trha se class ko banatay thay etc.
+ */
 let dog = {
- breed: 'Labrador',
- color: 'black',
- bark() {
- console.log('Woof!');
- }
-};
-dog.bark(); // Woof!
+    breed: 'Labrador',
+    color: 'black',
+    bark() {
+    console.log('Woof!');
+    }
+   };
+   dog.bark(); // Woof!
 ```
+- tho hum log kuch iss trha se pehly class ko banatay thy ES6 k version se pehly etc.
+
+- Classes, introduced in ES6, are a template for creating objects.
+- ab yaha pr hamare pass jub ES6 me classes introduced howe tho phir hum dosre tarikay se jo k ES6 version wala hy iss k tarikay se classes ko banane lagy jiss ki example aap niche dekh sakty hy etc.
+
+```bash
+/**
+ * jub hamare pass ES6 version aya tho phir hum log class ko banane k liye class k keyword ko hi use krthy hy.
+ * or ye iss k ilawa or b cheeze add krdeti hy ES6 jo version wo etc.
+ */
+
+class Animal {
+    constructor(name) {
+    this.name = name;
+    }
+   speak() {
+    console.log(`${this.name} makes a noise.`);
+    }
+   }
+   let animal = new Animal('Dog');
+   animal.speak(); // Dog makes a noise.
+```
+- tho aap kuch iss trha se ES6 ki madad k sath classes ko bana sakty hy etc.

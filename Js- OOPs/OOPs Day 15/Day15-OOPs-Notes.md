@@ -1422,6 +1422,85 @@ class Circle extends Shape {
 let myCircle = new Circle(5);
 myCircle.move(); // Circle moved
 ```
+Yes, in JavaScript, **inheritance** allows one class to reuse the properties and methods of another class. This is done using the `extends` and `super` keywords.
 
+---
+
+### ✅ `extends` Keyword
+
+- Used to **create a subclass** (child class) from a **superclass** (parent class).
+- The subclass inherits all the methods and properties of the parent class.
+
+**Example:**
+```javascript
+class Animal {
+  speak() {
+    console.log("Animal speaks");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Dog barks");
+  }
+}
+
+const d = new Dog();
+d.speak(); // Animal speaks (inherited)
+d.bark();  // Dog barks
+```
+
+---
+
+### ✅ `super` Keyword
+
+- Used inside a child class:
+  - To **call the parent class's constructor**.
+  - To **access parent methods**.
+
+**Example:**
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // calls Animal's constructor
+    this.breed = breed;
+  }
+
+  speak() {
+    super.speak(); // call parent method
+    console.log(`${this.name} barks`);
+  }
+}
+
+const dog = new Dog("Buddy", "Labrador");
+dog.speak();
+// Output:
+// Buddy makes a sound
+// Buddy barks
+```
+
+---
+
+### Summary
+
+| Keyword   | Use                              |
+|-----------|-----------------------------------|
+| `extends` | To inherit from a parent class    |
+| `super()` | To call the parent's constructor  |
+| `super.method()` | To call a parent method inside a child method |
+
+---
+
+Would you like an example with multiple levels of inheritance (e.g., `Animal -> Dog -> Puppy`)?
 
 

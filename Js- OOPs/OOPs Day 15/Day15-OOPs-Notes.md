@@ -986,3 +986,13 @@ cat.makeSound(); // Output: Meow!
 
 If you want more examples, a deeper explanation of any part, or a coding exercise to practice abstraction, let me know!
 
+
+
+# Advanced OOP Concepts in JavaScript
+
+## Constructors and the new Keyword
+- Constructors are special functions that create and initialize objects.
+- constructors aap k pass aik special type ka function hota hy aap k pass jo k advance level ka hota hy.
+- constructor me aap k pass constructor jo hy direct run hojata hy aap k pass etc.
+
+

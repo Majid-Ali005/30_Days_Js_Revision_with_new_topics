@@ -792,4 +792,30 @@ Trek bicycle is pedaling on the path.
 
 If you want more examples, a deeper dive into any part, or a coding exercise to practice polymorphism, let me know!
 
+## 5. Abstraction
+- Abstraction involves creating simple models representing complex real-world objects.
+- Abstraction me hum log andar k complex ya wo data jiss ko humme show nhi krwana hy oss k liye use krthy hy etc.
+
+```bash
+class Vehicle {
+    startEngine() {
+    console.log('Engine started');
+    }
+   stopEngine() {
+    console.log('Engine stopped');
+    }
+   }
+   class Car extends Vehicle {
+    startEngine() {
+    console.log('Car engine started');
+    }
+   }
+   let myCar = new Car();
+   myCar.startEngine(); // Car engine started
+
+   //output: Car engine started
+   ```
+   - tho agr aap yah pr dekhe tho aap k pass jo egnine started or engine stop jo hy wo print nhi ho rha hy matlab access nhi ho rha hy.
+   - or aap agr kisi b data ko access krna chahtay hy tho phir aap oss ko direct nhi kr sakty hy aap k indirect hi data ko access krna hoga etc. simple.
+   
 

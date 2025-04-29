@@ -1400,3 +1400,28 @@ console.log(p.fullName);       // Alice Johnson
 Would you like to see how getters and setters work in plain objects (not using `class`)?
 
 
+# 9. Inheritance with extends and super
+
+- The extends keyword is used in class declarations to create a class as a child of another class.
+
+```bash
+class Shape {
+ constructor(name) {
+ this.name = name;
+ }
+move() {
+ console.log(`${this.name} moved`);
+ }
+}
+class Circle extends Shape {
+ constructor(radius) {
+ super('Circle');
+ this.radius = radius;
+ }
+}
+let myCircle = new Circle(5);
+myCircle.move(); // Circle moved
+```
+
+
+

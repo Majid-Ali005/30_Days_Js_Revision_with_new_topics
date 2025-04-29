@@ -1225,4 +1225,82 @@ let rect2 = new Rectangle(6, 7);
 console.log(Rectangle.compareArea(rect1, rect2)); // -2
 ```
 
+In JavaScript, methods in classes can be classified into **instance methods**, **static methods**, and **prototype methods**. Here's a clear explanation of each:
+
+---
+
+### ✅ **1. Instance Methods**
+
+- These methods are defined **inside a class** and are called on instances (objects) of the class.
+- Each object created from the class has access to these methods.
+  
+**Syntax:**
+```javascript
+class Car {
+  drive() {
+    console.log("Driving...");
+  }
+}
+
+const myCar = new Car();
+myCar.drive(); // "Driving..."
+```
+
+---
+
+### ✅ **2. Static Methods**
+
+- Static methods are defined with the `static` keyword.
+- They **belong to the class itself**, not the instance.
+- You **call them on the class**, not on the object.
+
+**Syntax:**
+```javascript
+class MathHelper {
+  static add(x, y) {
+    return x + y;
+  }
+}
+
+console.log(MathHelper.add(5, 3)); // 8
+// MathHelper.add() is called directly on the class, not on an instance
+```
+
+---
+
+### ✅ **3. Prototype Methods**
+
+- In JavaScript, **all instance methods in classes are actually prototype methods**.
+- When you define a method inside a class (without `static`), it’s stored on the class's prototype.
+- So technically, instance methods are prototype methods.
+
+**Explanation:**
+```javascript
+class Person {
+  greet() {
+    console.log("Hello!");
+  }
+}
+
+const p = new Person();
+p.greet(); // "Hello!"
+console.log(p.__proto__.greet === Person.prototype.greet); // true
+```
+
+So:
+- All class methods (excluding `static`) go on the **prototype**.
+- You access them through instances, but they’re not copied to each object—they’re shared via prototype.
+
+---
+
+### Summary Table
+
+| Type of Method   | Called On           | Defined Using | Stored Where           |
+|------------------|---------------------|---------------|------------------------|
+| Instance Method  | Class Instance      | Inside class  | On class prototype     |
+| Static Method    | Class Itself        | `static`      | On the class directly  |
+| Prototype Method | Class Instance      | Inside class  | On class prototype     |
+
+Would you like a visual diagram showing how these methods are stored in memory?
+
 

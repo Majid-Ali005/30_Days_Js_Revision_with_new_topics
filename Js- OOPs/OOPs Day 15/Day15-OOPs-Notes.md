@@ -262,6 +262,344 @@ class Car {
   ```
   - tho agr aap iss example me dekhe tho ensule howa variable aap ab b use kr sakty hy tho iss ko secure krne k liye hum log private keyword ka use krthy etc. see example below.
 
+  ### Using Private Fields (True Encapsulation, ES6+)
+  - tho ab iss trha se private fields ko use krne se jub b koi oss private howe variable ya phir oss data ko access krne ki koshish karega jo k aap ne private kiya howa hy encapsule kiya howa hy tho phir aap ko error milega k bhai aap iss ko access nhi kr saty ho q k ye aik private fields hy etc. jaise tiktok private account.
+```bash
+class Car {
+    #speed = 0; // Private field
+    setSpeed(newSpeed) { // Public method
+      if (newSpeed >= 0) {
+        this.#speed = newSpeed;
+      }
+    }
+    getSpeed() { // Public method
+      return this.#speed;
+    }
+  }
   
+  let myCar = new Car();
+  myCar.setSpeed(100); // Works
+  console.log(myCar.getSpeed()); // Output: 100
+  console.log(myCar.#speed); // Error: Private field '#speed' is not accessible
+  ```
+
+- tho ab agr koi #speed ko access krne ki koshish karega tho oss ko phir error milega q k iss ko aap ne private fields kiya howa hy k bhai iss ko koi b access nhi kr sakta hy etc.
+
+Let me explain **Encapsulation** in the context of Object-Oriented Programming (OOP) in JavaScript using simple language and bullet points to make it clear. Since you’re asking about encapsulation after discussing objects and classes, I’ll connect it to those concepts and keep it beginner-friendly.
+
+### What is Encapsulation?
+- **Definition**: Encapsulation is the OOP principle of **bundling data (properties)** and **methods (functions)** that operate on that data into a single unit (an object), while **restricting direct access** to some of the object's components to protect its data.
+- **Analogy**: Think of a capsule (like a medicine capsule). The capsule contains the medicine (data) and only allows access to it in a controlled way (through methods). You can’t directly touch the medicine inside without opening the capsule properly.
+
+### Why Encapsulation?
+- Protects an object’s data from **unauthorized or accidental changes**.
+- Makes code **easier to maintain** by keeping related data and behavior together.
+- Hides **internal details** of an object and exposes only what’s necessary (like a black box).
+
+### How Encapsulation Works in JavaScript
+In JavaScript, encapsulation is achieved by:
+- Bundling properties and methods in **objects** or **classes**.
+- Controlling access to data using **private variables** or **closures** to restrict direct access.
+
+### Key Points of Encapsulation
+- **Bundling Data and Methods**:
+  - Properties (data) and methods (functions) are grouped together in an object or class.
+  - Example: A `Car` object has `speed` (property) and `drive()` (method) together.
+  
+- **Restricting Access**:
+  - Some data is kept **private** so it can only be accessed or modified through specific methods.
+  - This prevents external code from directly changing sensitive data.
+  
+- **Public vs Private**:
+  - **Public**: Properties/methods that anyone can access.
+  - **Private**: Properties/methods that are hidden and only accessible within the object/class.
+
+### Encapsulation in JavaScript (Examples)
+JavaScript doesn’t have strict `private` keywords like some other languages (e.g., Java), but it supports encapsulation using **conventions**, **closures**, and **private fields** (introduced in ES6).
+
+#### 1. Using Naming Conventions (Simple Encapsulation)
+- By convention, prefixing a property with `_` suggests it’s private (though it’s not truly private).
+```javascript
+class Car {
+  constructor() {
+    this._speed = 0; // _speed is "private" by convention
+  }
+  setSpeed(newSpeed) { // Public method to control access
+    if (newSpeed >= 0) {
+      this._speed = newSpeed;
+    }
+  }
+  getSpeed() { // Public method to access data
+    return this._speed;
+  }
+}
+
+let myCar = new Car();
+myCar.setSpeed(100); // Use method to change speed
+console.log(myCar.getSpeed()); // Output: 100
+myCar._speed = -50; // Not recommended, but possible (not truly private)
+console.log(myCar.getSpeed()); // Output: -50
+```
+- **Problem**: `_speed` can still be accessed directly, so this isn’t true encapsulation.
+
+#### 2. Using Private Fields (True Encapsulation, ES6+)
+- JavaScript introduced **private fields** with the `#` prefix (supported in modern browsers/Node.js).
+- Private fields are only accessible within the class.
+```javascript
+class Car {
+  #speed = 0; // Private field
+  setSpeed(newSpeed) { // Public method
+    if (newSpeed >= 0) {
+      this.#speed = newSpeed;
+    }
+  }
+  getSpeed() { // Public method
+    return this.#speed;
+  }
+}
+
+let myCar = new Car();
+myCar.setSpeed(100); // Works
+console.log(myCar.getSpeed()); // Output: 100
+console.log(myCar.#speed); // Error: Private field '#speed' is not accessible
+```
+- **Benefit**: `#speed` is truly private and can only be accessed/modified via `setSpeed` or `getSpeed`.
+
+#### 3. Using Closures (Older Way)
+- Before private fields, encapsulation was achieved using **closures** (functions that "close over" variables).
+```javascript
+function createCar() {
+  let speed = 0; // Private variable
+  return {
+    setSpeed: function(newSpeed) { // Public method
+      if (newSpeed >= 0) {
+        speed = newSpeed;
+      }
+    },
+    getSpeed: function() { // Public method
+      return speed;
+    }
+  };
+}
+
+let myCar = createCar();
+myCar.setSpeed(100); // Works
+console.log(myCar.getSpeed()); // Output: 100
+console.log(myCar.speed); // Output: undefined (speed is private)
+```
+- **How it works**: `speed` is private because it’s inside the function’s scope and only accessible via the returned methods.
+
+### Benefits of Encapsulation
+- **Data Protection**: Prevents invalid or harmful changes (e.g., setting a negative speed).
+- **Modularity**: Internal details are hidden, so you can change how the class works without affecting external code.
+- **Maintainability**: Easier to debug or update because data and methods are organized together.
+
+### Why It Might Seem Confusing
+- Encapsulation can feel abstract if you’re new to OOP because it involves thinking about "hiding" data.
+- JavaScript’s multiple ways to achieve encapsulation (conventions, closures, private fields) can be overwhelming.
+- **Solution**: Start with private fields (`#`) for modern JavaScript, as they’re the clearest way to implement encapsulation.
+
+### Real-World Analogy
+- Think of a **bank account**:
+  - **Private Data**: Your account balance (only the bank can directly access it).
+  - **Public Methods**: Deposit or withdraw functions (you can interact with the balance through these, but you can’t directly change the balance).
+  - Encapsulation ensures your balance is safe and only modified in controlled ways.
+
+### Summary
+- **Encapsulation** bundles data and methods into an object/class and restricts direct access to some data.
+- In JavaScript, encapsulation is achieved using:
+  - Naming conventions (`_variable`).
+  - Private fields (`#variable`).
+  - Closures (function scope).
+- It protects data, improves code organization, and makes systems easier to maintain.
+
+If you want a specific example, more details on any part, or help with a coding exercise related to encapsulation, let me know!
+
+## 3. Inheritance
+
+![alt text](image-3.png)
+
+- Inheritance allows a class to inherit properties and methods from another class.
+- inheritance aap ko allows krtha hy aik class ko dsore class k sath inhrit krna jiss se aap connect b keh sakty hy.
+- aap extends keyword ko use kr k aik class ko dosre class k sath connect matlab inherit kr sakty ho etc.
+```bash
+class Animal {
+    constructor(name) {
+    this.name = name;
+    }
+   speak() {
+    console.log(`${this.name} makes a noise.`);
+    }
+   }
+   class Dog extends Animal {
+    speak() {
+    console.log(`${this.name} barks.`);
+    }
+   }
+   let d = new Dog('Mitzie');
+   d.speak(); // Mitzie barks.
+   ```
+   - tho aap kuch iss trha se inherit kr sakty hy aik class ko dosre class me.
+   - ab aap ne jiss class k sath iss ko apne jo b class ko inherit kiya howa hy oss k class ka aap ko sirf object banana hoga bs or phir jiss class class ko inherit kiya howa hy phir oss k proeperties data ko b aap access kr sakty hy q k aap ne inherit kiya hy etc.
+
+Let me explain **Inheritance** in the context of Object-Oriented Programming (OOP) in JavaScript in a simple way, using bullet points for clarity. Since you’ve asked about encapsulation before, I’ll connect inheritance to the concepts of objects, classes, and OOP, keeping it beginner-friendly and relevant to your previous questions.
+
+### What is Inheritance?
+- **Definition**: Inheritance is an OOP principle where a **child class** (or subclass) **inherits** properties and methods from a **parent class** (or superclass). This allows the child class to reuse and extend the functionality of the parent class.
+- **Analogy**: Think of a family. A child inherits traits (like eye color) from their parents but can also have unique traits (like a specific talent). Similarly, a child class inherits features from the parent class and can add or modify its own.
+
+### Why Inheritance?
+- **Code Reusability**: Avoid rewriting the same code by reusing properties and methods from a parent class.
+- **Extensibility**: Child classes can add new features or modify inherited ones.
+- **Organized Code**: Creates a hierarchy of classes, making the code easier to understand and maintain.
+
+### How Inheritance Works in JavaScript
+- JavaScript uses **classes** (introduced in ES6) to implement inheritance with the **`extends`** keyword.
+- The child class inherits all properties and methods of the parent class and can:
+  - Use them as-is.
+  - Add new properties/methods.
+  - **Override** (modify) inherited methods to behave differently.
+
+### Key Points of Inheritance
+- **Parent Class**: The class that provides the properties and methods (also called the base class or superclass).
+- **Child Class**: The class that inherits from the parent class (also called the derived class or subclass).
+- **extends Keyword**: Used to create a child class that inherits from a parent class.
+- **super Keyword**: Used in the child class to call the parent class’s constructor or methods.
+
+### Inheritance in JavaScript (Example)
+Here’s a simple example to show how inheritance works:
+
+#### Example: Parent and Child Classes
+```javascript
+// Parent class
+class Animal {
+  constructor(name) {
+    this.name = name; // Property
+  }
+  speak() { // Method
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Child class inheriting from Animal
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call parent’s constructor to set name
+    this.breed = breed; // New property specific to Dog
+  }
+  speak() { // Override parent’s method
+    console.log(`${this.name}, the ${this.breed}, barks!`);
+  }
+  fetch() { // New method specific to Dog
+    console.log(`${this.name} is fetching the ball.`);
+  }
+}
+
+// Creating objects
+let animal = new Animal("Leo");
+let dog = new Dog("Buddy", "Golden Retriever");
+
+animal.speak(); // Output: Leo makes a sound.
+dog.speak(); // Output: Buddy, the Golden Retriever, barks!
+dog.fetch(); // Output: Buddy is fetching the ball.
+```
+
+### Breaking Down the Example
+- **Parent Class (Animal)**:
+  - Has a `name` property and a `speak` method.
+  - Represents a generic animal.
+- **Child Class (Dog)**:
+  - Uses `extends Animal` to inherit from `Animal`.
+  - Calls `super(name)` to initialize the `name` property from the parent class.
+  - Adds a new property (`breed`) and a new method (`fetch`).
+  - **Overrides** the `speak` method to provide a dog-specific behavior.
+- **Result**:
+  - `Dog` inherits `name` and `speak` from `Animal`.
+  - `Dog` can extend functionality (`breed`, `fetch`) and modify inherited behavior (`speak`).
+
+### Another Example (Real-World Context)
+Let’s say you’re modeling vehicles:
+```javascript
+// Parent class
+class Vehicle {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  drive() {
+    console.log(`${this.brand} vehicle is driving.`);
+  }
+}
+
+// Child class
+class Car extends Vehicle {
+  constructor(brand, model) {
+    super(brand); // Inherit brand from Vehicle
+    this.model = model;
+  }
+  drive() { // Override parent’s method
+    console.log(`${this.brand} ${this.model} is zooming on the road!`);
+  }
+}
+
+let vehicle = new Vehicle("Toyota");
+let car = new Car("Toyota", "Corolla");
+
+vehicle.drive(); // Output: Toyota vehicle is driving.
+car.drive(); // Output: Toyota Corolla is zooming on the road!
+```
+- **Vehicle** is the parent class with generic behavior.
+- **Car** is the child class that inherits from `Vehicle`, adds a `model` property, and customizes the `drive` method.
+
+### Key Features of Inheritance
+- **Reusability**: `Dog` and `Car` reuse the `name`/`brand` property and basic methods from their parent classes.
+- **Extensibility**: Child classes add their own properties (`breed`, `model`) and methods (`fetch`).
+- **Overriding**: Child classes can redefine inherited methods (`speak`, `drive`) to suit their needs.
+- **Hierarchy**: Inheritance creates a clear structure (e.g., `Animal` → `Dog`, `Vehicle` → `Car`).
+
+### Connecting to Encapsulation
+- Inheritance works well with **encapsulation**. For example, a parent class might have private fields (using `#`) that the child class can’t directly access but can interact with through public methods.
+- Example:
+```javascript
+class Animal {
+  #energy = 100; // Private field
+  getEnergy() { // Public method to access private field
+    return this.#energy;
+  }
+  eat() {
+    this.#energy += 10;
+    console.log(`Energy increased to ${this.#energy}`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Woof! Energy is " + this.getEnergy());
+  }
+}
+
+let dog = new Dog();
+dog.eat(); // Output: Energy increased to 110
+dog.bark(); // Output: Woof! Energy is 110
+// console.log(dog.#energy); // Error: #energy is private
+```
+- The child class (`Dog`) can use the parent’s public methods (`getEnergy`, `eat`) but can’t directly access the private `#energy` field.
+
+### Why It Might Seem Confusing
+- Inheritance can feel complex because it involves understanding how classes are related and how properties/methods flow from parent to child.
+- Terms like `extends`, `super`, and overriding might be new.
+- **Solution**: Practice with small examples (like above) and visualize the parent-child relationship as a family tree.
+
+### Real-World Analogy
+- **Parent**: A general "Vehicle" blueprint with basic features (engine, wheels).
+- **Child**: A specific "Car" that inherits the basics but adds unique features (sunroof, GPS).
+- The car doesn’t need to redefine the engine; it just builds on the vehicle’s foundation.
+
+### Summary
+- **Inheritance** allows a child class to inherit properties and methods from a parent class using `extends`.
+- It promotes **code reuse**, **extensibility**, and a **hierarchical structure**.
+- In JavaScript, use `super` to call the parent’s constructor or methods, and override methods to customize behavior.
+- Combines well with encapsulation to protect data while allowing controlled access.
+
+If you want more examples, a deeper explanation of any part, or a coding exercise to practice inheritance, let me know!
 
 

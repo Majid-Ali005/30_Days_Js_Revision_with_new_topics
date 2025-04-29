@@ -1324,6 +1324,79 @@ class Person {
    person.fullName = 'Jane Smith';
    console.log(person.fullName); // Jane Smith
    ```
-   
+
+   Yes, in JavaScript, **getters and setters** are special methods that allow you to define **object accessors**—computed properties that look like normal property access, but run a function in the background.
+
+---
+
+### ✅ **1. Getter (`get`)**
+- Allows you to access a property like a variable, but it actually calls a function.
+- Useful for computed values or controlled access.
+
+**Example:**
+```javascript
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const p = new Person("John", "Doe");
+console.log(p.fullName); // John Doe
+```
+
+---
+
+### ✅ **2. Setter (`set`)**
+- Allows you to **set** a property as if it’s a variable, but it actually runs a function.
+- Useful for validating or modifying data before assigning it.
+
+**Example:**
+```javascript
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  set fullName(name) {
+    const parts = name.split(" ");
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const p = new Person("Jane", "Smith");
+p.fullName = "Alice Johnson";  // Calls the setter
+console.log(p.fullName);       // Alice Johnson
+```
+
+---
+
+### 🧠 Why Use Getters/Setters?
+
+- Hide internal implementation details.
+- Add logic when reading or setting values.
+- Make your objects behave more like real-world models (cleaner syntax).
+
+---
+
+### Summary
+
+| Keyword | Purpose                | Accessed Like     | Behind the Scenes             |
+|---------|------------------------|-------------------|-------------------------------|
+| `get`   | Return a value         | `obj.prop`        | Calls the getter function     |
+| `set`   | Set/update a value     | `obj.prop = val`  | Calls the setter function     |
+
+Would you like to see how getters and setters work in plain objects (not using `class`)?
 
 

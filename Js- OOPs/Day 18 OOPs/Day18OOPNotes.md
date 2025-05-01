@@ -112,3 +112,22 @@ const user1 = new User("stark");
 //accessing the method in newly created object
 user1.greet(); //hi stark
 ```
+
+## ES6 Classes:
+ES6 introduced a more concise syntax for defining classes. It’s important to note that classes in JavaScript are essentially syntactic sugar over prototype-based inheritance.
+
+In ES6 classes, the first method inside the class is the constructor method. This method is invoked automatically when an object is instantiated from the class. It serves as the initialization point for object properties and other setup tasks.
+
+```bash
+class Person{
+constructor(firstname){
+ this.firstname = firstname;
+}
+greet(){
+console.log(`hi ${this.firstname}`);
+}
+}
+
+const stark = new Person("stark");
+stark.greet(); //hi stark
+```

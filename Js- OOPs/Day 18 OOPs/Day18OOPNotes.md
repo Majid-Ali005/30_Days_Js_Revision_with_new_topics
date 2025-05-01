@@ -186,3 +186,38 @@ EV.prototype.accelerate = function(){
 const car1 = new EV("tesla",120,23);
 car1.accelerate();//tesla going at 140km/h with a charge of 22%
 ```
+
+## Inheritance Using Class Method:
+In modern JavaScript (ES6 and later), the extends keyword is used to establish inheritance between classes. The child class (Buyer) extends the parent class (SalesShop), and the super() method is employed to call the constructor of the parent class and initialize its properties.
+
+```bash
+//parent class
+class SalesShop{
+ constructor(item,amount){
+  this.item =item;
+  this.amount = amount;
+ }
+ summary(){
+   console.log(` The ${this.item}is sold at ${this.amount}`);
+ }
+}
+//child class
+class Buyer extends SalesShop{
+   constructor(item,amount,buyerName){
+     super(item,amount);
+     this.buyerName = buyerName;
+   }
+ //over writing the method in child class
+   summary(){
+    console.log(`The ${this.item} is sold to ${this.buyerName} at ${this.amount}`)
+   }
+}
+
+//creating an instance for child class
+const shan = new Buyer("Table","$500","shan");
+shan.summary();  //The Table is sold to shan at $500
+```
+
+## Conclusion:
+I hope this blog helps you in Mastering OOP in JavaScript..It empowers one to write modular, maintainable, and scalable code. Whether you’re utilizing constructor functions, prototypes, ES6 classes, or a combination, understanding these concepts is essential for effective software development. Happy coding 😊!
+

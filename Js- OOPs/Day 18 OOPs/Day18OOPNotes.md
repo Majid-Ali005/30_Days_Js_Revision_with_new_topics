@@ -151,3 +151,38 @@ Stark.name ="stark"
 Stark.birthyear = 2000
 console.log(Stark.calcAge()); //23
 ```
+
+## Inheriting Classes:
+In JavaScript, there are different ways to achieve class inheritance, and each method has its own syntax and advantages. Let’s explore two common approaches:
+
+- inheritance using constructor functions
+- inheritance using the class method with the extends keyword.
+
+## Inheritance Using Constructor Function:
+When inheriting using constructor functions, we create a parent class (Car in this example) and a child class (EV). The child class utilizes the call method to link to the parent class and inherits its properties. Additionally, the Object.create method is employed to link the prototypes, establishing a chain of inheritance.
+
+```bash
+//parent class
+const Car = function(make,speed){
+    this.make = make;
+    this.speed = speed;
+}
+//child class
+const EV = function(make,speed,charge){
+    Car.call(this,make,speed)
+    this.charge = charge;
+}
+//linking the prototype by Object.create method
+EV.prototype = Object.create(Car.prototype);
+
+//defining a method in child class
+EV.prototype.accelerate = function(){
+    this.speed +=20;
+    this.charge -=1;
+    console.log(`${this.make} going at ${this.speed}km/h with a charge of ${this.charge}%`);
+}
+
+//creating a instance and calling the acclerate method
+const car1 = new EV("tesla",120,23);
+car1.accelerate();//tesla going at 140km/h with a charge of 22%
+```

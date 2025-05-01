@@ -131,3 +131,23 @@ console.log(`hi ${this.firstname}`);
 const stark = new Person("stark");
 stark.greet(); //hi stark
 ```
+
+## Object.create Method:
+The Object.create method in JavaScript is used for creating a new object with the specified prototype object and properties. It provides a way to manually control object prototypes, offering a more flexible approach to inheritance compared to constructor functions or ES6 classes.
+
+```bash
+ const Person  = {
+  calcAge(){
+    return 2023-this.birthyear;
+  },
+  init(name,birthyear){
+   this.name = name;
+   this.birthyear =  birthyear;
+  },
+};
+//setting person object to stark object
+const Stark = Object.create(Person)
+Stark.name ="stark"
+Stark.birthyear = 2000
+console.log(Stark.calcAge()); //23
+```

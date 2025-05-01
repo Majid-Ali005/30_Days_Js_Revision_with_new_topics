@@ -88,3 +88,27 @@ const User = function(name){
 const user2 = new User("stark");
 console.log(user2); //User { name: 'stark' }
 ```
+
+## Prototype:
+Prototypes in JavaScript are collections of functions and methods available to all objects created from a constructor function. By defining methods in the prototype, we achieve better code organization and inheritance.
+
+Every object in JavaScript is linked to a prototype object. When a property or method is accessed on an object, JavaScript looks for that property or method on the object itself. If it’s not found, it looks in the object’s prototype, forming a chain until the property is found or the end of the chain is reached.
+
+The process of inheriting method / property from prototype is called prototypal inheritance.
+
+```bash
+//constructor function
+const User = function(name){
+  this.name = name
+}
+
+//define method in User constructor function
+User.prototype.greet = function(){
+console.log(`hi ${this.name}`);
+}
+
+//creating an instance from the constructor function
+const user1 = new User("stark");
+//accessing the method in newly created object
+user1.greet(); //hi stark
+```

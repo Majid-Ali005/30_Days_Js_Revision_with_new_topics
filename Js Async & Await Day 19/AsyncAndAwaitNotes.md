@@ -770,3 +770,35 @@ async function getUserDataAndPosts(userId) {
 
 getUserDataAndPosts(1);
 ```
+
+![alt text](image-33.png)
+![alt text](image-34.png)
+![alt text](image-35.png)
+
+![alt text](image-36.png)
+
+![alt text](image-37.png)
+
+```bash
+async function fetchAndProcessData() {
+  try {
+    const [data1, data2] = await Promise.all([
+      fetch('https://api.example.com/data1').then(response => response.json()),
+      fetch('https://api.example.com/data2').then(response => response.json())
+    ]);
+
+    console.log('Data 1:', data1);
+    console.log('Data 2:', data2);
+
+    const processedData = await processData(data1, data2);
+    console.log('Processed Data:', processedData);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchAndProcessData();
+```
+![alt text](image-38.png)
+
+

@@ -123,19 +123,21 @@ Promise.all([promise1, promise2, promise3])
 #### **2.4 Async/Await**
 Async/await promises ka syntactic sugar hai, jo code ko synchronous jaisa readable banata hai.
 
+- yaha pr mene dummy api ko call kiya howa hy for practice etc. https://jsonplaceholder.typicode.com/users iss wale ko etc.
+
 **Syntax**:
 ```javascript
 async function fetchData() {
-  try {
-    const response = await fetch("https://api.example.com/data");
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error("Error:", error);
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
-}
-
-fetchData();
+  
+  fetchData();
 ```
 
 **How It Works**:

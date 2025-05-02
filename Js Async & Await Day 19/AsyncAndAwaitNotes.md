@@ -537,4 +537,29 @@ function fetchUserData(userId) {
   fetchUserData(1);
   ```
 
+  ![alt text](image-11.png)
+
+  ```bash
+  function fetchDataAndProcess() {
+  fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Initial Data:', data);
+      return fetch(`https://api.example.com/process/${data.id}`);
+    })
+    .then(response => response.json())
+    .then(processedData => {
+      console.log('Processed Data:', processedData);
+    })
+    .catch(error => {
+      console.error('Error in data processing:', error);
+    })
+    .finally(() => {
+      console.log('Data processing completed.');
+    });
+}
+
+fetchDataAndProcess();
+```
+
   

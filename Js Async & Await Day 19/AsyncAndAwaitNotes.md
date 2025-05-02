@@ -671,4 +671,22 @@ fetchData();
   getData();
   ```
   - ye upar wala code promise based code hy ab iss ko hum conver karenge async/await me.
-  
+
+  ![alt text](image-26.png)
+  - aik form se dosre form me code ko convert krna easy hota hy bs aap ko kuch cheeze change krni hoti hy aap ko scratch se code ko likhna nhi hota hy etc.
+  ```bash
+  async function getData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+getData();
+```
+- bs ye example api ki jagah apni api ko de dena hy etc.
+![alt text](image-27.png)

@@ -690,3 +690,23 @@ getData();
 ```
 - bs ye example api ki jagah apni api ko de dena hy etc.
 ![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+```bash
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Fetch error:', error);
+  }
+}
+
+fetchData();
+```
+![alt text](image-29.png)

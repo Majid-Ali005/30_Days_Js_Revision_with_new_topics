@@ -635,3 +635,21 @@ async function getUserDataAndPosts(userId) {
   
   getUserDataAndPosts(1);
   ```
+
+  ![alt text](image-21.png)
+
+  ![alt text](image-22.png)
+
+  ![alt text](image-23.png)
+
+```bash
+async function fetchData() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  console.log(data);
+}
+
+fetchData();
+```
+- bs iss example api ki jagah aap ko apne api ko add krdena hy etc. simple.
+ ![alt text](image-24.png)

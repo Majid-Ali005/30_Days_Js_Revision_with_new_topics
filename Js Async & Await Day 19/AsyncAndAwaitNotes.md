@@ -653,3 +653,22 @@ fetchData();
 ```
 - bs iss example api ki jagah aap ko apne api ko add krdena hy etc. simple.
  ![alt text](image-24.png)
+
+ ![alt text](image-25.png)
+ ```bash
+ function getData() {
+    return fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+  
+  getData();
+  ```
+  - ye upar wala code promise based code hy ab iss ko hum conver karenge async/await me.
+  

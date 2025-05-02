@@ -491,7 +491,26 @@ fetch(api).then(()=>{
    * tho aap iss trha se .catch k sath error ko handle kr sakty hy easily etc.
    */
   ```
+  ![alt text](image-7.png)
+
+  ![alt text](image-8.png)
+  - tho aap iss trha se finally ka b use kr sakty hy for error handling.
   
+  ```bash
+  let api = 'https://jsonplaceholder.typicode.com/users';
+
+fetch(api)
+  .then(response => response.json())
+  .then(data => {
+    console.log('Data:', data);
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  })
+  .finally(() => {
+    console.log('Fetch attempt finished.');
+  });
+  ```
 
 
   

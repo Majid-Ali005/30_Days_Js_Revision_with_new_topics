@@ -419,4 +419,79 @@ myPromise
   ```
 ![alt text](image-1.png)
 
+![alt text](image-2.png)
+
+```bash
+
+/**
+ * aap iss api ko iss trha aik variabl me store kr k direct fetch me dal sakty ho warn aap direct b api dal sakty ho etc.
+ * fetch(yaha pr).
+ */
+
+let api = 'https://jsonplaceholder.typicode.com/users';
+
+fetch(api)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    return fetch(api);
+  })
+  .then(response => response.json())
+  .then(otherData => {
+    console.log(otherData);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+  ```
+
+  ![alt text](image-3.png)
+
+  ![alt text](image-4.png)
+  Example of chaining Promises:
+  
+  ```bash
+  fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log('First Data:', data);
+    return fetch('https://api.example.com/other-data');
+  })
+  .then(response => response.json())
+  .then(otherData => {
+    console.log('Second Data:', otherData);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+  ```
+  - ye wahi example hy magr agr aap iss ko run karenge tho aap ko phir aik erro milega q k yaha pr aap ne jo api add ki hy wo wese hi type ki gaye hi tho aap iss ki jagah dummy api ko rakh sakty hy etc. jaise mene upar kiya b howa hy etc.
+  
+  ![alt text](image-5.png)
+
+  ![alt text](image-6.png)
+
+  ```bash
+  let api = 'https://jsonplaceholder.typicode.com/users';
+
+fetch(api).then(()=>{
+    if(!Response.ok){
+        console.log("Network response was not ok");
+    }
+    return Response.json();
+}).then(data => {
+    console.log('Data:', data);
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  });
+
+  //Output: Network response was not ok
+  /**
+   * tho aap iss trha se .catch k sath error ko handle kr sakty hy easily etc.
+   */
+  ```
+  
+
+
   

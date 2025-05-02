@@ -562,4 +562,56 @@ function fetchUserData(userId) {
 fetchDataAndProcess();
 ```
 
+  ![alt text](image-12.png)
+
+  ![alt text](image-13.png)
+
+  ```bash
+async function fetchData() {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
   
+  fetchData();
+  ```
+  - NOTE: aap iss api ko aik variable me store kr k b call kr sakty ho etc.
+  ![alt text](image-14.png)
+
+  ![alt text](image-15.png)
+  ![alt text](image-16.png)
+
+  ![alt text](image-17.png)
+  ```bash
+  async function getUserData(userId) {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+      const userData = await response.json();
+      return userData;
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  }
+  
+  console.log(getUserData(1));
+  ```
+
+  ![alt text](image-18.png)
+  ```bash
+  function getUserData(userId) {
+  return fetch(`https://api.example.com/users/${userId}`)
+    .then(response => response.json())
+    .then(userData => {
+      return userData;
+    })
+    .catch(error => {
+      console.error('Error fetching user data:', error);
+    });
+}
+```
+
+![alt text](image-19.png)

@@ -801,4 +801,56 @@ fetchAndProcessData();
 ```
 ![alt text](image-38.png)
 
+![alt text](image-39.png)
+![alt text](image-40.png)
+```bash
+async function fetchUserData(userId) {
+  const response = await fetch(`https://api.example.com/users/${userId}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch user data');
+  }
+  return response.json();
+}
+
+function fetchUserPosts(userId) {
+  return fetch(`https://api.example.com/users/${userId}/posts`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch user posts');
+      }
+      return response.json();
+    });
+}
+```
+![alt text](image-41.png)
+```bash
+async function getUserDataAndPosts(userId) {
+  try {
+    const userData = await fetchUserData(userId);
+    console.log('User Data:', userData);
+
+    const userPosts = await fetchUserPosts(userId);
+    console.log('User Posts:', userPosts);
+
+    // Process the data
+    const processedData = processUserDataAndPosts(userData, userPosts);
+    console.log('Processed Data:', processedData);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+function processUserDataAndPosts(userData, userPosts) {
+  // Example processing logic
+  return {
+    ...userData,
+    posts: userPosts
+  };
+}
+
+// Execute the function
+getUserDataAndPosts(1);
+```
+![alt text](image-42.png)
+
 

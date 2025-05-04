@@ -494,3 +494,136 @@ This method selects based on the id attribute of an element on the page.
 ```bash
 var element = document.getElementById("myElementId");
 ```
+
+### getElementsByClassName():
+This method is used to select all elements belonging to a particular class.
+
+```bash
+var elements = document.getElementsByClassName("myClassName");
+```
+
+### getElementsByTagName():
+This method is used to select all elements with a specific tag.
+
+```bash
+var elements = document.getElementsByTagName("div");
+```
+
+## querySelector() and querySelectorAll():
+querySelector() selects the first element that matches a given CSS selector, while querySelectorAll() selects all matching elements.
+
+```bash
+var element = document.querySelector("#myElementId");
+var elements = document.querySelectorAll(".myClassName");
+```
+
+## 4. DOM Manipulation✨
+
+Web developers can perform DOM manipulation using JavaScript. This includes dynamically changing page content, adding new elements, removing existing elements, and updating style properties.
+
+### Changing Element Content:
+We can use innerHTML or textContent properties to change the text content of an element within the DOM.
+
+```bash
+var element = document.getElementById("myElementId");
+element.innerHTML = "New content"; // or element.textContent = "New content";
+```
+
+### Creating a New Element:
+We can add it to the page by creating a new HTML element.
+
+```bash
+var newElement = document.createElement("div");
+newElement.innerHTML = "New Item";
+document.body.appendChild(newElement);
+```
+
+### Removing Elements:
+To remove an existing element, we must find the parent element of the element and then use the removeChild() method.
+
+```bash
+var elementToRemove = document.getElementById("myElementId");
+elementToRemove.parentNode.removeChild(elementToRemove);
+```
+
+### Changing Element Styles and Properties:
+We can change the CSS style properties and other properties of the elements.
+
+```bash
+var element = document.getElementById("myElementId");
+element.style.color = "red";
+```
+In the examples above, there are different examples that demonstrate DOM manipulation. With these techniques, you can dynamically change the content on your web page and react to user interactions.
+
+## DOM Events✨
+Interactions on web pages are carried out using events to enable users to interact with the page. Events represent interactions such as a user clicking a mouse, pressing a key, submitting a form, etc. Using JavaScript, we can listen for these events and react to user interactions.
+
+### Event Listeners:
+We can use the addEventListener() function to listen for a specific event. For example, to listen for a button click event:
+```bash
+var button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+    // Actions to be taken when a click event occurs
+});
+```
+
+### Common Events:
+- click: For click on an item.
+- mouseover and mouseout: For hover over and move away from an element.
+- keydown and keyup: For pressing a key and for it to work when you unclick it.
+- submit: For submit a form.
+
+## Event Object:
+Event listeners receive an event object containing information about the event when it occurs. This object contains information such as the type of the event, its target, and key information.
+
+Thanks to event listeners, you can make your web page responsive to user interactions and improve the user experience.
+
+## Asynchronous DOM Operations✨
+In modern web applications, it is common to retrieve data from the server and update it in the DOM to dynamically update pages. Such operations must be performed asynchronously. Asynchronous operations allow the page to continue without being blocked by other operations, so the page remains responsive and user-friendly during user interactions.
+
+## Asynchronous Data Retrieval with Fetch API:
+The Fetch API is a new asynchronous data retrieval method used in modern browsers. It attracts attention with its easier use and promise-based structure.
+```bash
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+    // Using data within the DOM
+  })
+  .catch(error => {
+    console.error("Error: ", error);
+  });
+  ```
+## Asynchronous DOM Update:
+It is possible to update the DOM content using data received asynchronously. For example, we can populate a list asynchronously.
+```bash
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+    var list = document.getElementById("myList");
+    data.forEach(item => {
+      var listItem = document.createElement("li");
+      listItem.textContent = item.text;
+      list.appendChild(listItem);
+    });
+  })
+  .catch(error => {
+    console.error("Error: ", error);
+  });
+  ```
+
+  ## Security and DOM✨
+Security is an important factor when performing DOM manipulation. Malicious users may attempt to manipulate web pages for malicious purposes. Therefore, it is important that you take some precautions to ensure safety.
+
+### XSS (Cross-Site Scripting) Attacks:
+XSS attacks occur when malicious users inject JavaScript code on the page. In this case, it is important to process user data securely and expose external data securely.
+
+### Adding Data via Secure Ways:
+Safe methods such as textContent or createElement should be used when adding user input into the DOM. You should not include user data directly with innerHTML containing it.
+
+### Using CSP (Content Security Policy):
+CSP is used to control where the page’s resources can be loaded from. CSP can help prevent XSS attacks and data leaks. CSP policies can be specified in the page title or in HTTP responses.
+
+### Event Listeners with Secure Methods:
+When listening to user interactions, addEventListener should be used instead of features like onclick or onmouseover. This helps manage interactions on the DOM more securely.
+
+DOM is a fundamental concept in the world of modern web development. DOM, a tool used to make pages dynamic and interactive, is the primary way to interact with web browsers. DOM represents HTML and XML documents as a tree structure, which treats each element in web pages as an object. Changes made to these objects make it possible to update the content of the web page, add new elements, remove existing ones, and listen to interactions. Using the DOM correctly and securely is the key to developing powerful and effective web applications.

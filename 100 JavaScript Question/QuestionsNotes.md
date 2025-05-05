@@ -148,3 +148,23 @@ The data types supported by JavaScript are:
 - Number
 - Object
 
+
+
+### 6) Is JavaScript a case-sensitive language?
+Yes, JavaScript is a case-sensitive language. When you name a variable, you must use the exact case to access that variable again. For that reason, like most case-sensitive languages, it is standard practice to use camelback notion where everything is in lowercase except mid-word capitalization. For example:
+
+let   myFirstName = “Mary”;
+
+- case sensitive matlab agr aap aik vriable ko Majid or dosre ko majid small letter se start krthy ho or aik ko capital tho yaha pr dono variable jo hy aik dosre se alag different hy simple yehi case sensitive hota hy etc.
+```bash
+
+// javaScript Case Sensitive
+let Majid = "Ali 1";
+let majid = "Ali 2";
+console.log(Majid); // output: Ali 1
+console.log(majid); // output: Ali 2
+/**
+ * tho iss trha se aap k pass dono variable alag alag honge because of the case sensitivity
+ * jaise aap ko output me b dikh rha hy k dono ka output alag alag hy etc.
+ */
+ ```

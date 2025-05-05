@@ -88,3 +88,51 @@ block comment. It can
 
 span as many lines as you’d like.*/
 ```
+- or aik problem jiss ko hum ne samjha b tha k aap jub string ko kisi number k sath concatenate krthy hy with the help of + plus tho wo phir aap k pass number int ko string me convert krdeta hy
+
+Solution
+solution ye hy k + plus ki jagah comma ka usee kare etc.
+
+### 4) Are there still local and global variables?
+In modern JavaScript, the designations of global and local variables have become more exact. By definition, a global variable can be accessed from anywhere within the program and have “global scope” or global visibility within the program. Local variables are temporary variables that only have a scope within the function that generated them and have “local scope.”
+
+// How to declare a local variable
+
+In older versions of JavaScript, you declared a variable using the keyword “var”. In modern JavaScript, “var” has been replaced with the keyword “let”. Because of this, the distinction between global and local variables becomes more sharply defined. You declare a variable using “let”: 
+
+let myFirstName = “John”;
+
+If a variable is not within a function, an if block, or a loop, the variable is global in scope. 
+
+#### Global Variable Example By Majid Ali
+
+```bash
+
+// global variable ki example k liye niche dekhe
+let globalVariable = "this is the global variable";
+
+function myFunction(){
+    console.log(globalVariable);
+    /**
+     * tho agr aap ye dekhe tho wo global varialbe aap k pass function me use ho rha hy.
+     * or issi hi ko global varialbe kaha jata hy.
+     * aap global variable let,var,const jiss se b banaya bs wo globally access ho sakty hy etc. simple.
+     */
+}
+myFunction(); // output: this is the global variable
+
+```
+
+#### Local Variable
+```bash
+// local variable
+
+function myFunction1(){
+    let LocalVariable = "this is the local variable";
+}
+console.log(LocalVariable); // Erro: ReferenceError: LocalVariable is not defined
+/**
+ * tho aap ko yaha pr ye error ==> ReferenceError: LocalVariable is not defined milega
+ * q k ye varialbe jo LocalVariable hy ye function k andar hy tho iss ka jo scope hy wo local hy aap iss ko sirf iss function k andar hi use kr sakty hy issi waja se aap ko error mil rha hy etc.
+ */
+ ```

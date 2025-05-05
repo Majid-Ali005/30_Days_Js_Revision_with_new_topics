@@ -168,3 +168,10 @@ console.log(majid); // output: Ali 2
  * jaise aap ko output me b dikh rha hy k dono ka output alag alag hy etc.
  */
  ```
+
+ ### 8) What is the difference between Java and JavaScript?
+ Java is an object-oriented, compiled programming language designed to run in the Java Virtual Machine. JavaScript is an object-oriented, interpreted scripting language designed to run in the browser or JavaScript engines like NodeJS.
+ - tho aap k pass javaScript bilkul b nhi match hoti hy java k sath because both are the different lanaguages jaise js frontend k liye use hoti hy etc.
+ - kuch variable k example k liye niche dekhe etc.
+
+ 1. creating variable in java

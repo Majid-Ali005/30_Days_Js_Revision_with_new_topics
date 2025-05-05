@@ -218,3 +218,30 @@ console.log(typeof(undfinedInJs)); // output: undefined
 let nulljs = null;
 console.log(typeof(nulljs)); // output: object
 ```
+
+### 10) What does this mean in JavaScript?
+The this keyword in JavaScript references the object in which the function is operating.
+- kisi b aik specific cheez ko target jub hum log krthy hy tho oss ko phir this k keword k sath kiya jata hy etc. example k liye niche dekhe etc.
+
+```bash
+// js this keyword example
+
+const person = {
+    name: "Alice",
+    greet: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+};
+person.greet(); // Outputs: Hello, my name is Alice
+
+// Another this keyowrd example
+
+function myFunction(name, age = 25) {
+    this.name = name;
+    this.age = age;
+}
+const person1 = new myFunction("ali");
+console.log(person1.name); // "ali"
+console.log(person1.age); // 25
+// yaha pr ye 25 value mene function me direct bydefault di howe hy etc.
+```

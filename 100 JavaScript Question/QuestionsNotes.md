@@ -136,3 +136,15 @@ console.log(LocalVariable); // Erro: ReferenceError: LocalVariable is not define
  * q k ye varialbe jo LocalVariable hy ye function k andar hy tho iss ka jo scope hy wo local hy aap iss ko sirf iss function k andar hi use kr sakty hy issi waja se aap ko error mil rha hy etc.
  */
  ```
+
+ ### 5) What data types does JavaScript support?
+The data types supported by JavaScript are:
+
+- Undefined
+- Null
+- Boolean
+- String
+- Symbol
+- Number
+- Object
+

@@ -1396,3 +1396,35 @@ console.log("Combined: Not adult?", isNotAdult); // Output: false (age >= 18 tru
 - ! (Logical NOT): Operand ke boolean value ko reverse karta hai (true ko false, false ko true).
 
 
+### 18) What does the isNaN() function do?
+The isNaN() function determines whether a value is not a number or an illegal number. If the argument is not a number, the isNaN() function will return true. A variable can also return NaN (Not a Number) if it needs to evaluate an expression that should return a number but fails to do so. 
+
+```bash
+// isNaN.js
+// Yeh file JavaScript mein isNaN() function ke kaam ko explain karti hai with comments
+
+// isNaN() check karta hai ke value NaN (Not-a-Number) hai ya nahi
+// True return hota hai agar value NaN hai, false agar valid number hai
+
+// Example: Different values ke saath isNaN() ka use
+console.log("isNaN('text'):", isNaN("text")); // Output: true (text number nahi ban sakta)
+console.log("isNaN(42):", isNaN(42)); // Output: false (42 ek valid number hai)
+console.log("isNaN('123'):", isNaN("123")); // Output: false (string "123" number 123 mein convert hoti hai)
+console.log("isNaN(0/0):", isNaN(0/0)); // Output: true (0/0 NaN hai)
+
+// Connecting to previous context (myFunction ke saath)
+function myFunction(name, age) {
+    return { name, age };
+}
+const person = myFunction("Ali", "twenty"); // age as invalid number
+console.log("isNaN(person.age):", isNaN(person.age)); // Output: true (string "twenty" NaN deta hai)
+```
+
+#### What does isNaN() do?
+isNaN() function check karta hai ke diya gaya value Not-a-Number (NaN) hai ya nahi. Yeh true return karta hai agar value NaN hai, aur false agar value ek valid number hai ya number mein convert ho sakta hai. Yeh function type coercion karta hai, yani non-number values ko pehle number mein convert karne ki koshish karta hai.
+
+##### Key Points:
+
+- NaN ek special value hai jo invalid mathematical operations (jaise 0/0) ya non-numeric values ke number conversion se aata hai.
+- isNaN(value) pehle value ko Number(value) mein convert karta hai, phir check karta hai ke result NaN hai ya nahi
+

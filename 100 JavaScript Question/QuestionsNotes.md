@@ -174,4 +174,47 @@ console.log(majid); // output: Ali 2
  - tho aap k pass javaScript bilkul b nhi match hoti hy java k sath because both are the different lanaguages jaise js frontend k liye use hoti hy etc.
  - kuch variable k example k liye niche dekhe etc.
 
- 1. creating variable in java
+```bash
+// creating variable in java
+
+// String name = "John";
+// System.out.println(name);
+
+// creating variable in javaScript
+let name = "john";
+console.log(name);
+/**
+ * tho aap k pass js or java dono bilkul 100% alag alag languages hy or ye different domain k liye use hoti hy
+ * aap ko iss variable k example se clear howa hoga.
+ */
+
+```
+
+### 9) What is the difference between null and undefined in JavaScript?
+A variable is undefined when you declare it without an assigned value, like below:
+
+var x;
+
+Null actually has to be assigned to a variable:
+
+var x = null;
+- variable undefined tub hota hy jub aap variable ko banatay hy matlab declare tho krthy hy magr oss me koi value save nhi krthy hy tho tub aap k pass wo variable phir undefined kehlata hy etc.
+- null is not equal to zero: matlab hum nul tub provide krthy hy jub hamare pass ye error a rha ho k bhai aap ko variable me value ko assign krna hi krna hy tho tub hum log krthy hy use null ka iss me hum value ko baad me save krthy hy abhi k liye sirf null krdetay hy etc. simple.
+```bash
+// 9) What is the difference between null and undefined in JavaScript?
+
+// undefine
+/**
+ * jub aap sirf variable ko declare krthy hy magr oss me koi value assign nhi krthy hy tho tub wo aap k pass undefined kehlat ahy etc.
+ * jaise aap niche wale example me dekh b sakty hy simple.
+ */
+let undfinedInJs;
+console.log(typeof(undfinedInJs)); // output: undefined
+
+// Null
+/**
+ * tho null me ye hota hy k hum value ko baad me assign krthy hy magr abhi k liye hum apne varialbe ko null rakh detay hy.
+ */
+let nulljs = null;
+console.log(typeof(nulljs)); // output: object
+```

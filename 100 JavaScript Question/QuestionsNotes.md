@@ -71,3 +71,20 @@ Click me to display Date and Time.</button>
 </head>
 ```
 - external js me aap aik file banatay hy externally or phir oss ko js k script tage k src me de detay hy jaise hum css k file ko kiya krthy thy bilkul oss hi trha tho phir ye aap k pass external JavaScript kehlata hy etc.
+
+### 3) How do you add comments to JavaScript?
+- aap k pass main comments jo hotay hy wo aik 
+1. single line comments hota hy
+2. or dosra multi-line comment hota hy.
+
+```bash
+You can add either line comments or block comments to JavaScript.
+
+// This is a line comment. It must stay on one line.
+
+/* This is a
+
+block comment. It can
+
+span as many lines as you’d like.*/
+```

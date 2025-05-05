@@ -1334,3 +1334,65 @@ if (value1 === value2) {
     console.log("=== checks type (safer):", "Values or types are different"); // Output: Values or types are different
 }
 ```
+
+### 17) What are the different boolean operators in JavaScript?
+The difference is as follows: 
+
+- && is the “and” operator
+- || is the “or” operator
+- ! is the “not” operator
+
+1. && and operator me jub dono taraf condition correct hojaye tho ye tub hi run hota hy
+2. or operator me agr aik side pr b condition correct hojaye tho ye chal jata hy etc.
+3. or not operator aap k pass true ko false or false ko true krdeta hy etc. simple.
+
+Example:
+
+```bash
+// logical_operators.js
+// Yeh file JavaScript mein &&, ||, ! logical operators ke use ko explain karti hai with comments
+
+// 1. && (Logical AND)
+// True hota hai agar dono operands true hon, else false
+const age = 25;
+const hasLicense = true;
+console.log("&& Example: Can drive?", age >= 18 && hasLicense); // Output: true (dono true hain)
+console.log("&& Example: Cannot drive?", age < 18 && hasLicense); // Output: false (pehla false hai)
+
+// 2. || ( logical OR)
+// True hota hai agar koi ek operand bhi true ho, else false
+const isStudent = false;
+const isEmployee = true;
+console.log("|| Example: Is busy?", isStudent || isEmployee); // Output: true (ek true hai)
+console.log("|| Example: Is free?", !isStudent || !isEmployee); // Output: true (dono true hain post NOT)
+
+// 3. ! (Logical NOT)
+// Operand ke boolean value ko reverse karta hai
+const isRaining = false;
+console.log("! Example: Not raining?", !isRaining); // Output: true (false ka reverse)
+console.log("! Example: Not true?", !true); // Output: false (true ka reverse)
+
+// 4. COMBINED EXAMPLE (Connecting to previous context)
+// myFunction ke saath logical operators ka use
+function myFunction(name, age = 25) {
+    return { name, age };
+}
+const person = myFunction("Ali", 20);
+
+// Check conditions using &&, ||, !
+const canVote = person.age >= 18 && person.name !== "";
+console.log("Combined: Can vote?", canVote); // Output: true (dono conditions true)
+
+const needsGuardian = person.age < 18 || person.name === "Unknown";
+console.log("Combined: Needs guardian?", needsGuardian); // Output: false (dono conditions false)
+
+const isNotAdult = ! (person.age >= 18);
+console.log("Combined: Not adult?", isNotAdult); // Output: false (age >= 18 true hai, iska NOT false)
+```
+
+#### Logical Operators in JavaScript
+- && (Logical AND): True hota hai agar dono operands true hon. Agar pehla operand false hai, to doosra evaluate nahi hota (short-circuiting).
+- || (Logical OR): True hota hai agar koi ek operand bhi true ho. Agar pehla operand true hai, to doosra evaluate nahi hota (short-circuiting).
+- ! (Logical NOT): Operand ke boolean value ko reverse karta hai (true ko false, false ko true).
+
+

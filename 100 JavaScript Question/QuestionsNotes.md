@@ -1428,3 +1428,58 @@ isNaN() function check karta hai ke diya gaya value Not-a-Number (NaN) hai ya na
 - NaN ek special value hai jo invalid mathematical operations (jaise 0/0) ya non-numeric values ke number conversion se aata hai.
 - isNaN(value) pehle value ko Number(value) mein convert karta hai, phir check karta hai ke result NaN hai ya nahi
 
+### 19) Can you use an anonymous function as a parameter for another function in JavaScript?
+Yes. An anonymous function can be assigned to a variable and then passed as a parameter to another function.
+
+#### What is an Anonymous Function as a Parameter?
+Ek anonymous function ek aisa function hai jiska koi naam nahi hota (e.g., function() {} ya () => {}). JavaScript mein anonymous functions ko dusre functions ke parameters ke roop mein pass kiya ja sakta hai, jo aksar callbacks ke roop mein use hote hain. Yeh higher-order functions ke saath common hai, jaise event handlers, timers, ya custom functions.
+
+```bash
+// anonymous_function.js
+// Yeh file dikhata hai ke anonymous function ko parameter ke roop mein kaise use karte hain
+
+// 1. BASIC EXAMPLE: Anonymous function as a callback
+// Ek function jo dusre function ko parameter ke roop mein accept karta hai
+function processData(callback) {
+    console.log("Processing data...");
+    callback(); // Anonymous function ko call karo
+}
+
+// Anonymous function directly as parameter
+processData(function() {
+    console.log("Anonymous Function: Data processed!"); // Output: Data processed!
+});
+
+// 2. USING ARROW FUNCTION: Anonymous arrow function as parameter
+// Arrow function bhi anonymous ho sakta hai
+processData(() => {
+    console.log("Anonymous Arrow Function: Data processed!"); // Output: Data processed!
+});
+
+// 3. CONNECTING TO PREVIOUS CONTEXT (myFunction ke saath)
+// Aapka myFunction use karke anonymous function ka example
+function myFunction(name, age = 25) {
+    return { name, age };
+}
+const person = myFunction("Ali");
+
+// Ek function jo person ke saath anonymous callback use karta hai
+function displayPerson(person, callback) {
+    console.log("Displaying person:", person.name);
+    callback(person); // Anonymous function ko person ke saath call karo
+}
+
+// Anonymous function mein person ka data use karna
+displayPerson(person, function(p) {
+    console.log("Anonymous Function: Person's age is", p.age); // Output: Person's age is 25
+});
+
+// 4. PRACTICAL EXAMPLE: setTimeout ke saath anonymous function
+// setTimeout ek anonymous function leta hai jo delay ke baad chalta hai
+setTimeout(function() {
+    console.log("Anonymous Function in setTimeout: Executed after 1 second!");
+}, 1000); // Output: (after 1 second) Executed after 1 second!
+```
+
+
+

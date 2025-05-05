@@ -16,3 +16,4 @@ function myFunction(name, age) {
 }
 const person = myFunction("Ali", "twenty"); // age as invalid number
 console.log("isNaN(person.age):", isNaN(person.age)); // Output: true (string "twenty" NaN deta hai)
+

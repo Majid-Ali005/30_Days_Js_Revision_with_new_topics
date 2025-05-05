@@ -1481,5 +1481,16 @@ setTimeout(function() {
 }, 1000); // Output: (after 1 second) Executed after 1 second!
 ```
 
+### 20) What JavaScript method calls a function for each element in an array?
+The forEach method calls a function for each element in an array.
+
+```bash
+var list = [1,2,3,4];
+list.forEach(function(element){
+    console.log(element); // Will log each element on a new line.
+});
+```
+
+
 
 

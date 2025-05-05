@@ -1,0 +1,2 @@
+1) What is JavaScript?
+As mentioned above, Javascript is no longer just a  lightweight language. It has become a powerful, object-oriented, interpreted programming language that adds dynamic capabilities to HTML pages. All the popular web browsers use it as a scripting language. It also is used in the backend to create services in platforms like NodeJS.

@@ -1512,7 +1512,87 @@ console.log(typeof(d)); // output: boolean
  * NOTE: jub aap code sahi likh rhy ho magr wo run na ho rha ho tho aik bar dobara run kare apne program ko etc.
  */
  ```
- 
+
+ ### 22) What kind of looping functions does JavaScript support?
+JavaScript supports three types of looping functions:
+
+- For loops
+- While loops
+- Do-while loops
+
+There are also several more specialized loops, such as forEach.
+
+JavaScript supports several looping constructs for iterating over data or executing code repeatedly. Below are simple examples of the main looping functions: `for`, `while`, `do-while`, and `forEach`, as well as other specialized loops like `for...of` and `for...in`.
+
+### 1. **For Loop**
+The `for` loop is used when you know the number of iterations in advance. It has three parts: initialization, condition, and increment/decrement.
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  console.log(i); // Outputs: 0, 1, 2
+}
+```
+
+### 2. **While Loop**
+The `while` loop continues as long as the specified condition is true. It's useful when the number of iterations isn't known upfront.
+
+```javascript
+let i = 0;
+while (i < 3) {
+  console.log(i); // Outputs: 0, 1, 2
+  i++;
+}
+```
+
+### 3. **Do-While Loop**
+The `do-while` loop is similar to the `while` loop but guarantees at least one iteration because the condition is checked after the loop body.
+
+```javascript
+let i = 0;
+do {
+  console.log(i); // Outputs: 0, 1, 2
+  i++;
+} while (i < 3);
+```
+
+### 4. **forEach Loop**
+The `forEach` method is used to iterate over arrays. It executes a provided function for each array element.
+
+```javascript
+const array = [1, 2, 3];
+array.forEach(item => {
+  console.log(item); // Outputs: 1, 2, 3
+});
+```
+
+### 5. **for...of Loop**
+The `for...of` loop is used to iterate over iterable objects like arrays, strings, or maps. It's cleaner than a traditional `for` loop for iterating over values.
+
+```javascript
+const array = [1, 2, 3];
+for (let item of array) {
+  console.log(item); // Outputs: 1, 2, 3
+}
+```
+
+### 6. **for...in Loop**
+The `for...in` loop is used to iterate over the enumerable properties of an object. It's primarily designed for objects, not arrays.
+
+```javascript
+const obj = { a: 1, b: 2, c: 3 };
+for (let key in obj) {
+  console.log(key, obj[key]); // Outputs: a 1, b 2, c 3
+}
+```
+
+Each of these loops has specific use cases:
+- Use `for` or `forEach` for arrays with known lengths.
+- Use `while` or `do-while` for condition-based iteration.
+- Use `for...of` for iterables like arrays or strings.
+- Use `for...in` for object properties.
+
+
+
 
 
 

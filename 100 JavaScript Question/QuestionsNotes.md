@@ -1491,6 +1491,32 @@ list.forEach(function(element){
 });
 ```
 
+### 21) What kind of type system does JavaScript use?
+Javascript uses dynamic typing and supports automatic type conversion.
+- javaScript me aap ko type ko batane ki zaroorat nhi hoti hy ye run time pr khud hi dynamically type jo hy assign krdeta hy jaise c++ me varialbe ko define krne k liye type batana parhta hy magr javaScript me aap ko nhi batana parhta hy bs value ko save krna hota hy variable me or phir type khud hi dynmically assign hojata hy etc.
+- NOTE: NOTE: jub aap code sahi likh rhy ho magr wo run na ho rha ho tho aik bar dobara run kare apne program ko etc.
+
+```bash
+
+// javaScript is dynamically typed language 
+let a = 25;
+let b = "Hello World";
+let c = 3.14;
+let d = true;
+console.log(typeof(a)); // output: number
+console.log(typeof(b)); // output: string
+console.log(typeof(c)); // output: number
+console.log(typeof(d)); // output: boolean
+/**
+ * tho yaha pr agr aap dekhe tho mene simply let k sath variables ko banaya hy magr js dynamically jiss type ka data save hy oss k mutabik type de deta hy etc simple
+ * NOTE: jub aap code sahi likh rhy ho magr wo run na ho rha ho tho aik bar dobara run kare apne program ko etc.
+ */
+ ```
+ 
+
+
+
+
 
 
 

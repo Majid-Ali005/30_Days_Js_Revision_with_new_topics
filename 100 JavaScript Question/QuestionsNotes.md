@@ -2156,6 +2156,10 @@ var ele2 = b.shift();
 A callback is a function that executes after another function has finished executing. It’s passed to the function as a parameter. Callbacks are necessary because JavaScript is an event-based language that can execute code asynchronously. Callback functions ensure that function calls occur in a specific order.
 
 
+### 34) What are closures?
+Closures form when you define a variable outside the current scope and access it from some inner scope. A simple way to use a closure is to define a JavaScript function inside of another JavaScript function.
+
+
 
 
 

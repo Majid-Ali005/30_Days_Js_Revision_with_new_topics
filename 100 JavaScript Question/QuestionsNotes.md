@@ -2152,6 +2152,10 @@ var ele2 = b.shift();
 // b will now equal [2,3] and ele2 will equal 1.
 ```
 
+### 33) What is a callback?
+A callback is a function that executes after another function has finished executing. It’s passed to the function as a parameter. Callbacks are necessary because JavaScript is an event-based language that can execute code asynchronously. Callback functions ensure that function calls occur in a specific order.
+
+
 
 
 

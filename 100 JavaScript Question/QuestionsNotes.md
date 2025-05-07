@@ -1697,6 +1697,44 @@ setInterval(function(){alert("You did it! Again!")},2000);
 ```
 - clearInterval(id): Used to stop a timer.
 
+### 26) How do you remove an attribute from a JavaScript object?
+Using the delete method will remove an attribute from an object.
+```bash
+var customer = { name: 'Tom Waits', age: 85}
+delete customer.age
+// customer will now be { name: 'Tom Waits' }
+```
+- aap iss trha se or b tarikay hotay hy oss se b delete kr sakty hy kisi b elements ko etc.
+
+To remove an attribute (property) from a JavaScript object, you can use the `delete` operator. Here's a simple example:
+
+```javascript
+// Example object
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+
+// Remove the 'age' property
+delete person.age;
+
+console.log(person);
+// Output: { name: "John", city: "New York" }
+```
+
+### Explanation:
+- The `delete` operator removes a property from an object.
+- Syntax: `delete object.property` or `delete object['property']`.
+- It returns `true` if the property is successfully deleted or if the property doesn't exist.
+
+### Notes:
+- If the property is non-configurable (e.g., defined with `Object.defineProperty` with `configurable: false`), `delete` will not remove it.
+- Use dot notation (`object.property`) for simple property names or bracket notation (`object['property']`) for dynamic or special character names.
+
+
+
+
 
 
 

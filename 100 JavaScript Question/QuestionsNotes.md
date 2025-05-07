@@ -1664,6 +1664,40 @@ The Document Object Model is a platform- and language-neutral interface that wil
 You can process the document further and incorporate the results of that processing back into the presented page.
 
 
+### 25) How do timers work in JavaScript?
+With a timer, coders can set their code to execute at specific times, either once or at repeat intervals. There are three functions involved to set a timer in JavaScript:
+
+- setTimeout(function, milliseconds): This creates a timer that will call a function after a designated amount of milliseconds. This also generates an id value so the coder can access it at another time.
+
+```bash
+// Create a button that, upon clicking, executes the exampleTimer function.
+<button onclick="exampleTimer()">Click here!</button>
+// Define the exampleTimer function to create an alert box 2000 milliseconds after clicking.
+<script>
+function exampleTimer()
+{
+setTimeout(function(){alert("You did it!")},2000);
+}
+</script>
+```
+
+- setInterval(function, milliseconds): This acts the same way as the setTimer function, only it repeats itself based on the number of milliseconds given.
+
+```bash
+// Create a button that, upon clicking, executes the example Interval function.
+<button onclick="exampleInterval()">Click here!</button>
+// The exampleInterval function will continue to create
+// a new alert box 2000 milliseconds after one is closed.
+<script>
+function exampleInterval()
+{
+setInterval(function(){alert("You did it! Again!")},2000);
+}
+</script>
+```
+- clearInterval(id): Used to stop a timer.
+
+
 
 
 

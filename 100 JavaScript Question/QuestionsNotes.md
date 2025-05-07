@@ -2140,6 +2140,18 @@ After spread with 'pineapple': [ 'mango', 'apple', 'kiwi', 'banana', 'orange', '
 
 Let me know if you need further clarification, additional examples, or help with a specific use case!
 
+### 32) How do you remove an element from a JavaScript Array?
+There are two ways to do this, depending on whether you want to remove an element from the beginning or the end of the array. Pop removes an element from the end and shift removes an element from the beginning. Both methods return the element that they removed:
+
+```bash
+var a = [1,2,3];
+var ele1 = a.pop();
+// a will now equal [1,2] and ele1 will equal 3.
+var b = [1,2,3];
+var ele2 = b.shift();
+// b will now equal [2,3] and ele2 will equal 1.
+```
+
 
 
 

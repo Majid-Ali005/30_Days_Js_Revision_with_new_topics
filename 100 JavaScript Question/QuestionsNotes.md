@@ -1650,6 +1650,20 @@ switch (day) {
 }
 ```
 
+### 24) What is the HTML DOM?
+Once a web page loads, your browser generates something called a DOM, or Document Object Model, of the page. The DOM acts as a programming interface for HTML, which defines HTML properties, events, and methods. It also refers to HTML elements as objects.
+
+JavaScript relies on this DOM to alter the elements and attributes of a page and create the dynamic websites it’s known for. Here’s a useful image demonstrating the hierarchy of HTML DOM objects:
+
+
+
+The official World Wide Web Consortium page for DOM defines it as:
+
+The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure, and style of documents.
+
+You can process the document further and incorporate the results of that processing back into the presented page.
+
+
 
 
 

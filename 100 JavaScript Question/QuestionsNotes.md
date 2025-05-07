@@ -1732,6 +1732,71 @@ console.log(person);
 - If the property is non-configurable (e.g., defined with `Object.defineProperty` with `configurable: false`), `delete` will not remove it.
 - Use dot notation (`object.property`) for simple property names or bracket notation (`object['property']`) for dynamic or special character names.
 
+### 27) What type of pop-ups does JavaScript support?
+There are three types:
+
+- Alert
+- Confirm
+- Prompt
+
+JavaScript supports three main types of pop-up dialogs through the `window` object, which are commonly used for simple user interactions. These are:
+
+1. **Alert**:
+   - Displays a simple dialog box with a message and an "OK" button.
+   - Used to inform or notify the user.
+   - Example:
+     ```javascript
+     alert("This is an alert message!");
+     ```
+   - Output: A pop-up with the message and an OK button. No value is returned.
+
+2. **Confirm**:
+   - Displays a dialog box with a message, an "OK" button, and a "Cancel" button.
+   - Used to get user confirmation (e.g., yes/no).
+   - Returns `true` if the user clicks OK, `false` if Cancel.
+   - Example:
+     ```javascript
+     let result = confirm("Do you want to proceed?");
+     console.log(result); // true if OK, false if Cancel
+     ```
+   - Output: A pop-up asking for confirmation, returning a boolean.
+
+3. **Prompt**:
+   - Displays a dialog box with a message, a text input field, an "OK" button, and a "Cancel" button.
+   - Used to collect user input.
+   - Returns the entered text if OK is clicked, or `null` if Cancel is clicked.
+   - Example:
+     ```javascript
+     let name = prompt("Please enter your name:", "John");
+     console.log(name); // e.g., "John" or null if Cancel
+     ```
+   - Output: A pop-up with an input field, returning the input string or `null`.
+
+### Notes:
+- These pop-ups are synchronous and block the execution of the script until the user responds.
+- They are basic and not customizable (styling is browser-dependent).
+- Modern web applications often use custom modals (e.g., with HTML/CSS or libraries like Bootstrap) for better design and functionality.
+- Example in a file (e.g., `popups.js`):
+  ```javascript
+  // Alert example
+  alert("Welcome to the site!");
+
+  // Confirm example
+  if (confirm("Do you want to continue?")) {
+      console.log("User clicked OK");
+  } else {
+      console.log("User clicked Cancel");
+  }
+
+  // Prompt example
+  let userInput = prompt("Enter your favorite color:", "Blue");
+  console.log(userInput ? `You chose: ${userInput}` : "User canceled");
+  ```
+
+You can save this code in a `.js` file and run it in a browser (e.g., via an HTML file with a `<script>` tag) to see the pop-ups in action. Let me know if you need further examples or a different context!
+
+- NOTE: agr ye aap k pass show nhi hota hy with .js extension k sath tho phir aap .html me iss ko add kr k run kare etc.
+
 
 
 

@@ -2160,6 +2160,24 @@ A callback is a function that executes after another function has finished execu
 Closures form when you define a variable outside the current scope and access it from some inner scope. A simple way to use a closure is to define a JavaScript function inside of another JavaScript function.
 
 
+### 35) What does a break statement do?
+Break statements stop the execution of a loop in JavaScript.
+
+### 36) What does a continue statement do?
+Continue statements continue the next statement in a JavaScript loop.
+
+### 37) How do you create a generic object in JavaScript?
+You can create a new, empty JavaScript object using the object class.
+
+var x = new object();
+
+### 38) How do you find the type of a JavaScript object in code?
+You do this using the typeof operator.
+
+console.log(typeof 42);
+
+// Will output “number”
+
 
 
 

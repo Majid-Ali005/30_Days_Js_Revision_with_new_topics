@@ -2011,6 +2011,10 @@ Status:	Active
 
 Let me know if you need further clarification, more examples, or help with a specific use case!
 
+### 30) What are JavaScript cookies?
+Cookies are small data files stored by a browser. Websites set them to store information about you. An example would be the cookie set when you choose “Remember Me” when logging into a website. The site will store a cookie in your browser as a token to identify you without requiring you to log in again.
+
+
 
 
 

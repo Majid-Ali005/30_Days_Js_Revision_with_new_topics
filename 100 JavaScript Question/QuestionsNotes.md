@@ -2203,6 +2203,10 @@ A JavaScript frontend framework is a set of JavaScript libraries that define a w
 - React
 - Vue
 
+### 42) What is the difference between window and document in JavaScript?
+The JavaScript window object is a global object that comprises variables, functions, history, location, and other attributes. The JavaScript document object is a property of the window object.
+
+
 
 
 

@@ -2178,6 +2178,21 @@ console.log(typeof 42);
 
 // Will output “number”
 
+### 39) How do you handle exceptions in JavaScript?
+You can handle runtime exceptions by using the try, catch, and finally statements. Run the code you want to test in the try block, and if a runtime error occurs, it will execute the code designated in the catch block. The code in the finally block executes whether or not there is an error.
+
+```bash
+Try{
+    // Code you are executing
+}
+Catch(error){
+    // Code to throw an exception
+}
+Finally{
+    // Code that runs after either success or failure
+}
+```
+
 
 
 

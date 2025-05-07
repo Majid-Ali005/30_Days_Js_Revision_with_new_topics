@@ -1592,6 +1592,66 @@ Each of these loops has specific use cases:
 - Use `for...in` for object properties.
 
 
+### 23) What kind of conditional statements does JavaScript support?
+These are the conditional statements supported by JavaScript:
+
+- If
+- If-else
+- If-else if-else
+- Switch
+
+```bash
+// examples.js
+
+// 1. If Statement
+console.log("Example 1: If Statement");
+let age = 18;
+if (age >= 18) {
+    console.log("You are eligible to vote!");
+}
+
+// 2. If-Else Statement
+console.log("\nExample 2: If-Else Statement");
+let temperature = 25;
+if (temperature > 30) {
+    console.log("It's hot outside!");
+} else {
+    console.log("It's not too hot.");
+}
+
+// 3. If-Else If-Else Statement
+console.log("\nExample 3: If-Else If-Else Statement");
+let score = 85;
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: F");
+}
+
+// 4. Switch Statement
+console.log("\nExample 4: Switch Statement");
+let day = "Wednesday";
+switch (day) {
+    case "Monday":
+        console.log("It's the start of the week!");
+        break;
+    case "Wednesday":
+        console.log("It's midweek!");
+        break;
+    case "Friday":
+        console.log("Weekend is near!");
+        break;
+    default:
+        console.log("It's another day.");
+}
+```
+
+
+
 
 
 

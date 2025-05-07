@@ -2193,6 +2193,16 @@ Finally{
 }
 ```
 
+### 40) What is the difference between Local storage and Session storage?
+Local storage is stored locally in the browser without contacting the server with each change to the stored data. It persists between sessions unless it’s manually cleared. Session storage is like local storage, but it’s cleared when the browser is closed.
+
+### 41) What are some JavaScript frontend frameworks and what to they do?
+A JavaScript frontend framework is a set of JavaScript libraries that define a workflow and structure to a JavaScript web application. Here are some popular frontend frameworks:
+
+- Angular
+- React
+- Vue
+
 
 
 
